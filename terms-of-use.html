@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WakeWalk - Termos de Uso</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .content {
+            padding: 80px 0;
+            background-color: var(--surface);
+        }
+        
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: var(--surface);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        .content h2 {
+            font-size: 1.8rem;
+            margin: 30px 0 15px;
+            color: var(--primary);
+        }
+        
+        .content p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .content ul {
+            margin-bottom: 20px;
+            margin-left: 20px;
+        }
+        
+        .content li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .content li:before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .content .date {
+            text-align: right;
+            font-style: italic;
+            margin-bottom: 30px;
+            color: var(--text-secondary);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-container">
+                    <img src="images/logo.png" alt="Logo WakeWalk">
+                </div>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html#features" data-i18n="nav_features">Recursos</a></li>
+                    <li><a href="index.html#about" data-i18n="nav_about">Sobre</a></li>
+                    <li><a href="index.html#subscription" data-i18n="nav_subscription">Assinatura</a></li>
+                    <li><a href="index.html#download" data-i18n="nav_download">Download</a></li>
+                </ul>
+            </nav>
+            <div class="language-selector">
+                <select id="language-selector" onchange="changeLanguage(this.value)">
+                    <option value="pt">Português</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <section class="content">
+        <div class="container">
+            <div class="content-container">
+                <h1 data-i18n="terms_of_use_title">Termos de Uso</h1>
+                <div class="date" data-i18n="terms_last_updated">Última atualização: 1 de Janeiro de 2025</div>
+                
+                <h2 data-i18n="terms_section1">1. Aceitação dos Termos</h2>
+                <p data-i18n="terms_acceptance">Ao baixar, instalar ou usar o aplicativo WakeWalk, você concorda com estes Termos de Uso. Se você não concordar com qualquer parte destes termos, não use o aplicativo.</p>
+                
+                <h2 data-i18n="terms_section2">2. Descrição do Serviço</h2>
+                <p data-i18n="terms_description">O WakeWalk é um aplicativo de alarme que exige movimento físico para ser desativado. O aplicativo inclui:</p>
+                <ul>
+                    <li data-i18n="terms_description1">Funções de alarme com detecção de movimento</li>
+                    <li data-i18n="terms_description2">Período de teste gratuito de 7 dias</li>
+                    <li data-i18n="terms_description3">Assinatura necessária após o período de teste</li>
+                </ul>
+                
+                <h2 data-i18n="terms_section3">3. Contas de Usuário</h2>
+                <p data-i18n="terms_accounts">Alguns recursos podem exigir a criação de uma conta. Você é responsável por:</p>
+                <ul>
+                    <li data-i18n="terms_accounts1">Manter a confidencialidade da sua senha</li>
+                    <li data-i18n="terms_accounts2">Todas as atividades que ocorrem sob sua conta</li>
+                    <li data-i18n="terms_accounts3">Notificar-nos imediatamente sobre qualquer uso não autorizado</li>
+                </ul>
+                
+                <h2 data-i18n="terms_section4">4. Assinaturas e Pagamentos</h2>
+                <p data-i18n="terms_subscriptions">O WakeWalk está disponível através de assinaturas pagas:</p>
+                <ul>
+                    <li data-i18n="terms_subscriptions1">Oferecemos um período de teste gratuito de 7 dias</li>
+                    <li data-i18n="terms_subscriptions2">Após o teste, a assinatura é necessária para usar o aplicativo</li>
+                    <li data-i18n="terms_subscriptions3">As assinaturas são renovadas automaticamente a menos que canceladas</li>
+                    <li data-i18n="terms_subscriptions4">Você pode cancelar a qualquer momento através das configurações da sua loja de aplicativos</li>
+                    <li data-i18n="terms_subscriptions5">Os reembolsos são processados de acordo com as políticas da Google Play ou App Store</li>
+                </ul>
+                
+                <h2 data-i18n="terms_section5">5. Uso Aceitável</h2>
+                <p data-i18n="terms_acceptable_use">Você concorda em não:</p>
+                <ul>
+                    <li data-i18n="terms_acceptable_use1">Modificar, descompilar ou fazer engenharia reversa do aplicativo</li>
+                    <li data-i18n="terms_acceptable_use2">Usar o aplicativo para qualquer finalidade ilegal ou não autorizada</li>
+                    <li data-i18n="terms_acceptable_use3">Interferir no funcionamento adequado do serviço</li>
+                    <li data-i18n="terms_acceptable_use4">Tentar contornar quaisquer medidas de segurança</li>
+                </ul>
+                
+                <h2 data-i18n="terms_section6">6. Propriedade Intelectual</h2>
+                <p data-i18n="terms_intellectual_property">O aplicativo WakeWalk e todo o seu conteúdo são propriedade exclusiva nossa e são protegidos por leis de propriedade intelectual. Você não tem permissão para reproduzir, distribuir ou criar trabalhos derivados sem autorização.</p>
+                
+                <h2 data-i18n="terms_section7">7. Isenção de Responsabilidade</h2>
+                <p data-i18n="terms_disclaimer">O aplicativo é fornecido "como está", sem garantias de qualquer tipo. Não garantimos que o alarme funcionará perfeitamente em todas as situações, especialmente em casos de problemas com sensores, bateria baixa ou falhas de hardware.</p>
+                
+                <h2 data-i18n="terms_section8">8. Limitação de Responsabilidade</h2>
+                <p data-i18n="terms_liability">Em nenhuma circunstância seremos responsáveis por danos indiretos, incidentais ou consequenciais relacionados ao uso ou incapacidade de usar o aplicativo, incluindo mas não limitado a perdas devido a alarmes que não funcionaram conforme esperado.</p>
+                
+                <h2 data-i18n="terms_section9">9. Alterações nos Termos</h2>
+                <p data-i18n="terms_changes">Reservamo-nos o direito de modificar estes termos a qualquer momento. Notificaremos os usuários sobre alterações significativas. O uso contínuo do aplicativo após tais modificações constitui aceitação dos novos termos.</p>
+                
+                <h2 data-i18n="terms_section10">10. Lei Aplicável</h2>
+                <p data-i18n="terms_law">Estes termos são regidos pelas leis do Brasil, sem consideração aos princípios de conflitos de leis.</p>
+                
+                <h2 data-i18n="terms_section11">11. Contato</h2>
+                <p data-i18n="terms_contact">Se você tiver dúvidas sobre estes Termos de Uso, entre em contato conosco em givoxmobile@gmail.com.</p>
+                
+                <a href="index.html" class="back-link">← Voltar para a página inicial</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="footer-logo-container">
+                        <img src="images/logo.png" alt="Logo WakeWalk">
+                    </div>
+                    <p data-i18n="footer_rights">© 2025 WakeWalk. Todos os direitos reservados.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer_links">Links Úteis</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html" data-i18n="privacy_policy">Política de Privacidade</a></li>
+                        <li><a href="terms-of-use.html" data-i18n="terms_of_use">Termos de Uso</a></li>
+                        <li><a href="account-deletion.html" data-i18n="account_deletion">Exclusão de Conta</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 data-i18n="contact">Contato</h4>
+                    <p>Email: <a href="mailto:givoxmobile@gmail.com">givoxmobile@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de internacionalização -->
+    <script src="js/translations.js"></script>
+    <script src="js/i18n.js"></script>
+</body>
+</html> 

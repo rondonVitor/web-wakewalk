@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WakeWalk - Acorde com movimento</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-container">
+                    <img src="images/logo.png" alt="Logo WakeWalk">
+                </div>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#features" data-i18n="nav_features">Recursos</a></li>
+                    <li><a href="#about" data-i18n="nav_about">Sobre</a></li>
+                    <li><a href="#subscription" data-i18n="nav_subscription">Assinatura</a></li>
+                    <li><a href="#download" data-i18n="nav_download">Download</a></li>
+                </ul>
+            </nav>
+            <div class="language-selector">
+                <select id="language-selector" onchange="changeLanguage(this.value)">
+                    <option value="pt">Português</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-i18n="hero_title">Acorde com movimento, não apenas com som</h1>
+                <p data-i18n="hero_subtitle">WakeWalk é um alarme que garante que você realmente levante da cama exigindo que você se movimente para desligá-lo. Experimente gratuitamente por 7 dias!</p>
+                <a href="#download" class="btn primary-btn" data-i18n="hero_cta">Experimente Grátis</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 data-i18n="features_title">Como Funciona</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚶</div>
+                    <h3 data-i18n="feature1_title">Missões de Movimento</h3>
+                    <p data-i18n="feature1_desc">Complete desafios de movimento para desligar seu alarme - garante que você realmente saia da cama.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3 data-i18n="feature2_title">Alarme com Detecção</h3>
+                    <p data-i18n="feature2_desc">O aplicativo detecta seus movimentos usando sensores do smartphone para garantir que você está realmente se movimentando.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3 data-i18n="feature3_title">Alarme Persistente</h3>
+                    <p data-i18n="feature3_desc">O alarme só desliga quando você completa a missão de movimento, garantindo que você acordará no horário.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 data-i18n="about_title">Sobre o WakeWalk</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-i18n="about_description">WakeWalk é um aplicativo de alarme inovador projetado para ajudar pessoas com sono pesado a realmente levantarem da cama no horário. Ao exigir movimento físico para desligar o alarme, ele efetivamente impede que você volte a dormir.</p>
+                    <p data-i18n="about_list_title">Com nosso aplicativo, você pode:</p>
+                    <ul>
+                        <li data-i18n="about_item1">Definir alarmes que exigem movimento para desativar</li>
+                        <li data-i18n="about_item3">Garantir que você realmente acorde e saia da cama</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="subscription" class="features">
+        <div class="container">
+            <h2 data-i18n="subscription_title">Modelo de Assinatura</h2>
+            <div class="subscription-card">
+                <div class="feature-icon">⭐</div>
+                <h3 data-i18n="subscription_heading">7 Dias Grátis + Assinatura</h3>
+                <p data-i18n="subscription_desc">O WakeWalk oferece um período de teste gratuito de 7 dias para novos usuários. Após esse período, o acesso ao aplicativo é disponível exclusivamente por meio de assinatura. Nossa assinatura garante acesso completo a todas as funcionalidades do alarme com detecção de movimento.</p>
+                <div class="subscription-highlight">
+                    <p><strong>Experimente grátis por 7 dias!</strong></p>
+                    <p>Após o período gratuito, continuar usando o app requer assinatura.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="download">
+        <div class="container">
+            <h2 data-i18n="download_title">Baixe Agora</h2>
+            <p data-i18n="download_subtitle">Disponível na Google Play • 7 dias grátis</p>
+            <a href="https://play.google.com/store/apps/" class="btn primary-btn download-btn">
+                <span class="btn-icon">🤖</span>
+                <span class="btn-text" data-i18n="android_button">Google Play</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="footer-logo-container">
+                        <img src="images/logo.png" alt="Logo WakeWalk">
+                    </div>
+                    <p data-i18n="footer_rights">© 2025 WakeWalk. Todos os direitos reservados.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer_links">Links Úteis</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html" data-i18n="privacy_policy">Política de Privacidade</a></li>
+                        <li><a href="terms-of-use.html" data-i18n="terms_of_use">Termos de Uso</a></li>
+                        <li><a href="account-deletion.html" data-i18n="account_deletion">Exclusão de Conta</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 data-i18n="contact">Contato</h4>
+                    <p>Email: <a href="mailto:givoxmobile@gmail.com">givoxmobile@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de internacionalização -->
+    <script src="js/translations.js"></script>
+    <script src="js/i18n.js"></script>
+</body>
+</html> 
