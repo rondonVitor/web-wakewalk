@@ -12,7 +12,7 @@
       footer_product: "Produto", footer_legal: "Legal", footer_features: "Recursos",
       footer_pricing: "Assinatura", footer_download: "Baixar",
       privacy: "Política de Privacidade", terms: "Termos de Uso", account_del: "Exclusão de Conta",
-      footer_contact: "Contato", footer_rights: "© 2025 WakeWalk. Todos os direitos reservados.",
+      footer_contact: "Contato", footer_rights: "© 2026 WakeWalk. Todos os direitos reservados.",
 
       /* ---------- PRIVACY ---------- */
       pv_eyebrow: "Privacidade",
@@ -143,7 +143,7 @@
       footer_product: "Product", footer_legal: "Legal", footer_features: "Features",
       footer_pricing: "Pricing", footer_download: "Download",
       privacy: "Privacy Policy", terms: "Terms of Use", account_del: "Account Deletion",
-      footer_contact: "Contact", footer_rights: "© 2025 WakeWalk. All rights reserved.",
+      footer_contact: "Contact", footer_rights: "© 2026 WakeWalk. All rights reserved.",
 
       /* ---------- PRIVACY ---------- */
       pv_eyebrow: "Privacy",

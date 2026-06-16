@@ -174,7 +174,7 @@
       terms: "Termos de Uso",
       account_del: "Exclusão de Conta",
       footer_contact: "Contato",
-      footer_rights: "© 2025 WakeWalk. Todos os direitos reservados.",
+      footer_rights: "© 2026 WakeWalk. Todos os direitos reservados.",
     },
 
     en: {
@@ -349,7 +349,7 @@
       terms: "Terms of Use",
       account_del: "Account Deletion",
       footer_contact: "Contact",
-      footer_rights: "© 2025 WakeWalk. All rights reserved.",
+      footer_rights: "© 2026 WakeWalk. All rights reserved.",
     },
   };
 
