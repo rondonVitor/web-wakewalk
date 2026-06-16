@@ -1,11 +1,11 @@
 /* Variáveis de cores baseadas no design system do app */
 :root {
-    --primary: #6200EE;
-    --primary-light: #7595f7;
-    --primary-dark: #3700B3;
-    --secondary: #03DAC6;
-    --secondary-light: #66fff9;
-    --secondary-dark: #00a896;
+    --primary: #5260F0;
+    --primary-light: #7C8CFF;
+    --primary-dark: #3A48D8;
+    --secondary: #C53A8E;
+    --secondary-light: #e06bb0;
+    --secondary-dark: #9c2e70;
     --background: #FAFAFA;
     --surface: #FFFFFF;
     --surface-variant: #F5F5F5;
@@ -147,7 +147,7 @@ ul {
 /* Seção Hero */
 .hero {
     padding: 100px 0;
-    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    background: linear-gradient(135deg, #4F46E5, #C53A8E 54%, #FF9F45);
     color: white;
 }
 
