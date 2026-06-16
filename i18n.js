@@ -1,0 +1,398 @@
+/* WakeWalk landing — bilingual strings (PT-BR default + EN) and language toggle.
+   Strings are applied to [data-i18n] (text) and [data-i18n-html] (innerHTML). */
+(function () {
+  const STR = {
+    pt: {
+      nav_features: "Recursos",
+      nav_how: "Como funciona",
+      nav_sleep: "Sono",
+      nav_pricing: "Assinatura",
+      nav_download: "Baixar",
+      hdr_cta: "Teste grátis",
+
+      hero_badge: "3 dias grátis · sem compromisso",
+      hero_title_1: "Acorde com ",
+      hero_title_grad: "movimento",
+      hero_title_2: ", não só com som.",
+      hero_sub: "O WakeWalk é o despertador que garante que você sai da cama: ele só desliga quando você completa uma missão de movimento. Impossível voltar a dormir.",
+      hero_cta_primary: "Começar grátis",
+      hero_cta_secondary: "Ver como funciona",
+      proof_1_v: "25",
+      proof_1_l: "passos pra desligar",
+      proof_2_v: "4",
+      proof_2_l: "níveis de dificuldade",
+      proof_3_v: "0",
+      proof_3_l: "botão de soneca",
+
+      mission_label: "Missão de movimento",
+      mission_of: "de 25 passos",
+      mission_msg: "Quase lá!",
+      mission_hint: "Não pare — falta pouco",
+
+      how_eyebrow: "Como funciona",
+      how_title: "Três passos entre você e a cama desfeita",
+      how_sub: "Configure uma vez. Toda manhã o WakeWalk transforma o acordar num pequeno desafio que você sempre vence.",
+      how_1_t: "Crie o alarme",
+      how_1_d: "Escolha o horário, os dias da semana, o som e a missão. Recorrência total no seu controle.",
+      how_2_t: "Ele toca de manhã",
+      how_2_d: "Um amanhecer luminoso e um som que não dá pra ignorar. Sem soneca, sem deslizar pra desligar.",
+      how_3_t: "Mexa-se pra desligar",
+      how_3_d: "Caminhe os passos pedidos ou fotografe o objeto certo. Só aí o alarme silencia — e você já está de pé.",
+
+      move_eyebrow: "Missões de movimento",
+      move_title: "Conte passos de verdade, na dose que você escolher",
+      move_sub: "Os sensores do celular contam cada passo. Escolha a dificuldade e o WakeWalk ajusta quantos passos você precisa dar pra silenciar o alarme.",
+      move_f1_t: "Contagem por sensor",
+      move_f1_d: "Acelerômetro e podômetro detectam movimento real — não adianta chacoalhar o celular.",
+      move_f2_t: "Meta adaptável",
+      move_f2_d: "De um passeio curto a uma caminhada que te acorda de vez.",
+      move_f3_t: "Anel de progresso ao vivo",
+      move_f3_d: "Veja os passos subirem em tempo real até o amanhecer da tela.",
+      diff_easy_n: "Fácil",
+      diff_easy_d: "10 passos · um empurrãozinho",
+      diff_medium_n: "Médio",
+      diff_medium_d: "25 passos · de pé pra valer",
+      diff_hard_n: "Difícil",
+      diff_hard_d: "50 passos · sono pesado",
+      diff_extreme_n: "Extremo",
+      diff_extreme_d: "100 passos · sem perdão",
+
+      photo_eyebrow: "Missão de foto",
+      photo_title: "Sem a foto certa, sem soneca",
+      photo_sub: "Para alarmes ainda mais à prova de preguiça, o WakeWalk pede uma foto de um objeto do dia a dia. Você precisa levantar, ir até ele e fotografar — reconhecimento na hora.",
+      photo_f1_t: "Objeto aleatório",
+      photo_f1_d: "Pia, escova de dentes, cafeteira… ele sorteia algo que te tira do quarto.",
+      photo_f2_t: "Reconhecimento na câmera",
+      photo_f2_d: "A IA confirma o objeto antes de liberar — nada de foto da parede.",
+      photo_cam_t: "Fotografe uma xícara",
+      photo_cam_h: "Aponte a câmera para o objeto",
+      photo_cam_cap: "Toque para capturar",
+
+      streak_eyebrow: "Sequência",
+      streak_title: "Construa uma sequência que você não quer quebrar",
+      streak_sub: "Cada manhã vencida acende o fogo. Veja sua sequência crescer dia após dia e supere o seu recorde — a motivação que faz o hábito grudar.",
+      streak_unit: "dias de sequência",
+      streak_best: "Melhor sequência",
+      streak_week: "Esta semana",
+      streak_week_v: "7/7 missões",
+
+      stats_eyebrow: "Estatísticas e tendências",
+      stats_title: "Seu progresso, em números que motivam",
+      stats_sub: "O WakeWalk acompanha cada despertar e transforma em tendências claras: horário médio, passos, consistência e a evolução semana a semana.",
+      stat_1_v: "06:42",
+      stat_1_l: "Horário médio",
+      stat_2_v: "1.480",
+      stat_2_l: "Passos / manhã",
+      stat_3_v: "23",
+      stat_3_l: "Manhãs no mês",
+      stat_4_v: "94%",
+      stat_4_l: "Taxa de acerto",
+      chart_trend_t: "Tendência de despertar",
+      chart_trend_m: "últimos 7 dias",
+      chart_heat_t: "Consistência",
+      chart_heat_m: "12 semanas",
+      heat_less: "menos",
+      heat_more: "mais",
+
+      ach_eyebrow: "Conquistas",
+      ach_title: "Cada marco vira uma medalha",
+      ach_sub: "Desbloqueie conquistas conforme avança — pequenas recompensas que celebram cada hábito construído.",
+      ach_1_t: "Madrugador",
+      ach_1_d: "7 dias seguidos antes das 7h",
+      ach_2_t: "Maratonista",
+      ach_2_d: "10.000 passos em missões",
+      ach_3_t: "Inquebrável",
+      ach_3_d: "30 dias de sequência",
+      ach_4_t: "Lenda do amanhecer",
+      ach_4_d: "100 manhãs vencidas",
+      ach_unlocked: "Desbloqueada",
+      ach_locked: "Bloqueada",
+
+      sleep_eyebrow: "Modo Sono",
+      sleep_title: "Durma melhor pra acordar melhor",
+      sleep_sub: "O ciclo do bom despertar começa à noite. Defina sua hora de dormir, siga ciclos de sono de 90 minutos e adormeça com uma biblioteca de sons relaxantes.",
+      sleep_f1_t: "Lembrete de dormir",
+      sleep_f1_d: "Um empurrãozinho na hora certa para você descansar o suficiente.",
+      sleep_f2_t: "Ciclos de 90 minutos",
+      sleep_f2_d: "Sugestões de horário alinhadas aos seus ciclos de sono.",
+      sleep_f3_t: "Sons relaxantes",
+      sleep_f3_d: "Chuva, floresta, ondas e mais — com timer pra desligar sozinho.",
+      sleep_hero_lbl: "Hora de dormir",
+      sleep_hero_meta: "8h 0min até o alarme · 5 ciclos",
+      sound_forest: "Floresta",
+      sound_rain: "Chuva",
+      sound_waves: "Ondas",
+      sound_night: "Noite",
+      now_playing: "Tocando agora",
+      now_sound: "Floresta · sons da natureza",
+
+      recur_eyebrow: "Alarmes recorrentes",
+      recur_title: "Uma rotina pra cada dia da semana",
+      recur_sub: "Defina horários diferentes para dias úteis e fins de semana, ative só os dias que importam e deixe o WakeWalk cuidar da consistência por você.",
+      recur_f1_t: "Por dia da semana",
+      recur_f1_d: "Selecione exatamente em quais dias cada alarme toca.",
+      recur_f2_t: "Vários alarmes",
+      recur_f2_d: "Empilhe quantos quiser, cada um com sua própria missão.",
+      recur_f3_t: "Próximo alarme em destaque",
+      recur_f3_d: "A tela inicial sempre mostra quanto falta pro próximo toque.",
+      recur_days: "Seg a Sex",
+      recur_meta: "Toca em 8h 12min",
+      day_mon: "S", day_tue: "T", day_wed: "Q", day_thu: "Q", day_fri: "S", day_sat: "S", day_sun: "D",
+
+      price_eyebrow: "Assinatura",
+      price_title: "Teste 3 dias grátis. Continue se valer a pena.",
+      price_sub: "Acesso completo a missões, estatísticas, conquistas e modo Sono. Cancele quando quiser, sem burocracia.",
+      plan_m_n: "Mensal",
+      plan_m_per: "Cobrança mensal",
+      plan_y_n: "Anual",
+      plan_y_per: "Cobrança anual",
+      plan_price_region: "Preço exibido na loja, conforme a sua região",
+      plan_y_save: "Economize no plano anual",
+      plan_best: "Melhor valor",
+      plan_feat_1: "Missões de movimento e foto",
+      plan_feat_2: "Estatísticas e conquistas",
+      plan_feat_3: "Modo Sono completo",
+      plan_feat_4: "Alarmes ilimitados",
+      plan_cta_m: "Começar teste grátis",
+      plan_cta_y: "Começar teste grátis",
+      price_note: "3 dias grátis para novos usuários. Depois do período, o uso continua via assinatura — o preço é exibido na loja, de acordo com a sua região.",
+
+      cta_title: "Sua próxima manhã começa de pé.",
+      cta_sub: "Baixe o WakeWalk e transforme o acordar num hábito que gruda.",
+      store_get_ios_1: "Baixar na",
+      store_get_ios_2: "App Store",
+      store_get_and_1: "Disponível no",
+      store_get_and_2: "Google Play",
+
+      footer_tag: "O único despertador que garante que você levanta — acorde com movimento, comece o dia melhor.",
+      footer_product: "Produto",
+      footer_legal: "Legal",
+      footer_features: "Recursos",
+      footer_pricing: "Assinatura",
+      footer_download: "Baixar",
+      privacy: "Política de Privacidade",
+      terms: "Termos de Uso",
+      account_del: "Exclusão de Conta",
+      footer_contact: "Contato",
+      footer_rights: "© 2025 WakeWalk. Todos os direitos reservados.",
+    },
+
+    en: {
+      nav_features: "Features",
+      nav_how: "How it works",
+      nav_sleep: "Sleep",
+      nav_pricing: "Pricing",
+      nav_download: "Download",
+      hdr_cta: "Try free",
+
+      hero_badge: "3-day free trial · no commitment",
+      hero_title_1: "Wake up with ",
+      hero_title_grad: "movement",
+      hero_title_2: ", not just sound.",
+      hero_sub: "WakeWalk is the alarm that guarantees you get out of bed: it only stops once you complete a movement mission. Falling back asleep is impossible.",
+      hero_cta_primary: "Start free",
+      hero_cta_secondary: "See how it works",
+      proof_1_v: "25",
+      proof_1_l: "steps to dismiss",
+      proof_2_v: "4",
+      proof_2_l: "difficulty levels",
+      proof_3_v: "0",
+      proof_3_l: "snooze button",
+
+      mission_label: "Movement mission",
+      mission_of: "of 25 steps",
+      mission_msg: "Almost there!",
+      mission_hint: "Don't stop — nearly done",
+
+      how_eyebrow: "How it works",
+      how_title: "Three steps between you and an unmade bed",
+      how_sub: "Set it once. Every morning WakeWalk turns waking up into a small challenge you always win.",
+      how_1_t: "Create the alarm",
+      how_1_d: "Pick the time, weekdays, sound and mission. Full recurrence, fully your call.",
+      how_2_t: "It rings in the morning",
+      how_2_d: "A luminous sunrise and a sound you can't ignore. No snooze, no swipe-to-dismiss.",
+      how_3_t: "Move to turn it off",
+      how_3_d: "Walk the required steps or photograph the right object. Only then does it go quiet — and you're already up.",
+
+      move_eyebrow: "Movement missions",
+      move_title: "Count real steps, at the dose you choose",
+      move_sub: "Your phone's sensors count every step. Pick a difficulty and WakeWalk sets how many steps you need to silence the alarm.",
+      move_f1_t: "Sensor-based counting",
+      move_f1_d: "Accelerometer and pedometer detect real movement — shaking the phone won't cut it.",
+      move_f2_t: "Adaptive goal",
+      move_f2_d: "From a short walk to a hike that wakes you up for good.",
+      move_f3_t: "Live progress ring",
+      move_f3_d: "Watch the steps climb in real time toward the screen's sunrise.",
+      diff_easy_n: "Easy",
+      diff_easy_d: "10 steps · a gentle nudge",
+      diff_medium_n: "Medium",
+      diff_medium_d: "25 steps · properly up",
+      diff_hard_n: "Hard",
+      diff_hard_d: "50 steps · heavy sleeper",
+      diff_extreme_n: "Extreme",
+      diff_extreme_d: "100 steps · no mercy",
+
+      photo_eyebrow: "Photo mission",
+      photo_title: "No right photo, no snooze",
+      photo_sub: "For alarms that are even more lazy-proof, WakeWalk asks for a photo of an everyday object. You have to get up, walk to it and shoot — recognized on the spot.",
+      photo_f1_t: "Random object",
+      photo_f1_d: "Sink, toothbrush, coffee maker… it picks something that gets you out of the room.",
+      photo_f2_t: "On-camera recognition",
+      photo_f2_d: "AI confirms the object before unlocking — no snapping the wall.",
+      photo_cam_t: "Photograph a cup",
+      photo_cam_h: "Point your camera at the object",
+      photo_cam_cap: "Tap to capture",
+
+      streak_eyebrow: "Streak",
+      streak_title: "Build a streak you won't want to break",
+      streak_sub: "Every morning you win lights the fire. Watch your streak grow day after day and beat your record — the motivation that makes the habit stick.",
+      streak_unit: "day streak",
+      streak_best: "Best streak",
+      streak_week: "This week",
+      streak_week_v: "7/7 missions",
+
+      stats_eyebrow: "Statistics & trends",
+      stats_title: "Your progress, in numbers that motivate",
+      stats_sub: "WakeWalk tracks every wake-up and turns it into clear trends: average time, steps, consistency and your week-over-week progress.",
+      stat_1_v: "06:42",
+      stat_1_l: "Avg wake time",
+      stat_2_v: "1,480",
+      stat_2_l: "Steps / morning",
+      stat_3_v: "23",
+      stat_3_l: "Mornings this month",
+      stat_4_v: "94%",
+      stat_4_l: "Success rate",
+      chart_trend_t: "Wake trend",
+      chart_trend_m: "last 7 days",
+      chart_heat_t: "Consistency",
+      chart_heat_m: "12 weeks",
+      heat_less: "less",
+      heat_more: "more",
+
+      ach_eyebrow: "Achievements",
+      ach_title: "Every milestone becomes a badge",
+      ach_sub: "Unlock achievements as you go — small rewards that celebrate every habit you build.",
+      ach_1_t: "Early Riser",
+      ach_1_d: "7 days in a row before 7am",
+      ach_2_t: "Marathoner",
+      ach_2_d: "10,000 steps in missions",
+      ach_3_t: "Unbreakable",
+      ach_3_d: "30-day streak",
+      ach_4_t: "Sunrise Legend",
+      ach_4_d: "100 mornings won",
+      ach_unlocked: "Unlocked",
+      ach_locked: "Locked",
+
+      sleep_eyebrow: "Sleep mode",
+      sleep_title: "Sleep better to wake up better",
+      sleep_sub: "The cycle of a good wake-up starts at night. Set your bedtime, follow 90-minute sleep cycles and drift off to a library of calming sounds.",
+      sleep_f1_t: "Bedtime reminder",
+      sleep_f1_d: "A nudge at the right time so you get enough rest.",
+      sleep_f2_t: "90-minute cycles",
+      sleep_f2_d: "Time suggestions aligned with your sleep cycles.",
+      sleep_f3_t: "Relaxing sounds",
+      sleep_f3_d: "Rain, forest, waves and more — with a timer to fade out on its own.",
+      sleep_hero_lbl: "Bedtime",
+      sleep_hero_meta: "8h 0min until alarm · 5 cycles",
+      sound_forest: "Forest",
+      sound_rain: "Rain",
+      sound_waves: "Waves",
+      sound_night: "Night",
+      now_playing: "Now playing",
+      now_sound: "Forest · nature sounds",
+
+      recur_eyebrow: "Recurring alarms",
+      recur_title: "A routine for every day of the week",
+      recur_sub: "Set different times for weekdays and weekends, enable only the days that matter and let WakeWalk handle the consistency for you.",
+      recur_f1_t: "By weekday",
+      recur_f1_d: "Choose exactly which days each alarm rings.",
+      recur_f2_t: "Multiple alarms",
+      recur_f2_d: "Stack as many as you want, each with its own mission.",
+      recur_f3_t: "Next alarm front and center",
+      recur_f3_d: "The home screen always shows the countdown to the next ring.",
+      recur_days: "Mon to Fri",
+      recur_meta: "Rings in 8h 12min",
+      day_mon: "M", day_tue: "T", day_wed: "W", day_thu: "T", day_fri: "F", day_sat: "S", day_sun: "S",
+
+      price_eyebrow: "Pricing",
+      price_title: "Try 3 days free. Keep it if it's worth it.",
+      price_sub: "Full access to missions, statistics, achievements and Sleep mode. Cancel anytime, no hassle.",
+      plan_m_n: "Monthly",
+      plan_m_per: "Billed monthly",
+      plan_y_n: "Yearly",
+      plan_y_per: "Billed yearly",
+      plan_price_region: "Price shown in your store, based on your region",
+      plan_y_save: "Save with the yearly plan",
+      plan_best: "Best value",
+      plan_feat_1: "Movement & photo missions",
+      plan_feat_2: "Statistics & achievements",
+      plan_feat_3: "Full Sleep mode",
+      plan_feat_4: "Unlimited alarms",
+      plan_cta_m: "Start free trial",
+      plan_cta_y: "Start free trial",
+      price_note: "3 days free for new users. After the trial, access continues via subscription — price is shown in the store, based on your region.",
+
+      cta_title: "Your next morning starts on your feet.",
+      cta_sub: "Download WakeWalk and turn waking up into a habit that sticks.",
+      store_get_ios_1: "Download on the",
+      store_get_ios_2: "App Store",
+      store_get_and_1: "Get it on",
+      store_get_and_2: "Google Play",
+
+      footer_tag: "The only alarm that guarantees you get up — wake with movement, start the day better.",
+      footer_product: "Product",
+      footer_legal: "Legal",
+      footer_features: "Features",
+      footer_pricing: "Pricing",
+      footer_download: "Download",
+      privacy: "Privacy Policy",
+      terms: "Terms of Use",
+      account_del: "Account Deletion",
+      footer_contact: "Contact",
+      footer_rights: "© 2025 WakeWalk. All rights reserved.",
+    },
+  };
+
+  function apply(lang) {
+    const dict = STR[lang] || STR.pt;
+    document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const k = el.getAttribute("data-i18n");
+      if (dict[k] != null) el.textContent = dict[k];
+    });
+    document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+      const k = el.getAttribute("data-i18n-html");
+      if (dict[k] != null) el.innerHTML = dict[k];
+    });
+    document.querySelectorAll(".lang button").forEach((b) => {
+      b.classList.toggle("on", b.dataset.lang === lang);
+    });
+    try { localStorage.setItem("ww_lang", lang); } catch (e) {}
+  }
+
+  function init() {
+    let lang = "pt";
+    try { lang = localStorage.getItem("ww_lang") || (navigator.language || "").toLowerCase().startsWith("en") ? "en" : "pt"; } catch (e) {}
+    try {
+      const saved = localStorage.getItem("ww_lang");
+      if (saved === "pt" || saved === "en") lang = saved;
+    } catch (e) {}
+    apply(lang);
+    document.querySelectorAll(".lang button").forEach((b) => {
+      b.addEventListener("click", () => apply(b.dataset.lang));
+    });
+
+    // scroll reveal
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+      }, { threshold: 0.12 });
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    } else {
+      document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
+    }
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();

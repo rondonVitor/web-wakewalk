@@ -1,191 +1,164 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WakeWalk - Política de Privacidade</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        .content {
-            padding: 80px 0;
-            background-color: var(--surface);
-        }
-        
-        .content-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px;
-            background-color: var(--surface);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            color: var(--primary);
-            text-align: center;
-        }
-        
-        .content h2 {
-            font-size: 1.8rem;
-            margin: 30px 0 15px;
-            color: var(--primary);
-        }
-        
-        .content p {
-            margin-bottom: 20px;
-            line-height: 1.7;
-        }
-        
-        .content ul {
-            margin-bottom: 20px;
-            margin-left: 20px;
-        }
-        
-        .content li {
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 25px;
-        }
-        
-        .content li:before {
-            content: "•";
-            color: var(--primary);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-        
-        .content .date {
-            text-align: right;
-            font-style: italic;
-            margin-bottom: 30px;
-            color: var(--text-secondary);
-        }
-        
-        .back-link {
-            display: inline-block;
-            margin-top: 30px;
-            margin-bottom: 20px;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WakeWalk — Política de Privacidade</title>
+<link rel="icon" href="assets/app-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0..1,0&display=swap" />
+<link rel="stylesheet" href="landing.css" />
+<link rel="stylesheet" href="legal.css" />
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <div class="logo-container">
-                    <img src="images/logo.png" alt="Logo WakeWalk">
-                </div>
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="index.html#features" data-i18n="nav_features">Recursos</a></li>
-                    <li><a href="index.html#about" data-i18n="nav_about">Sobre</a></li>
-                    <li><a href="index.html#subscription" data-i18n="nav_subscription">Assinatura</a></li>
-                    <li><a href="index.html#download" data-i18n="nav_download">Download</a></li>
-                </ul>
-            </nav>
-            <div class="language-selector">
-                <select id="language-selector" onchange="changeLanguage(this.value)">
-                    <option value="pt">Português</option>
-                    <option value="en">English</option>
-                </select>
-            </div>
-        </div>
-    </header>
 
-    <section class="content">
-        <div class="container">
-            <div class="content-container">
-                <h1 data-i18n="privacy_policy_title">Política de Privacidade</h1>
-                <div class="date" data-i18n="privacy_last_updated">Última atualização: 1 de Janeiro de 2025</div>
-                
-                <h2 data-i18n="privacy_section1">1. Introdução</h2>
-                <p data-i18n="privacy_intro">Obrigado por usar o WakeWalk. Esta Política de Privacidade descreve como coletamos, usamos e compartilhamos suas informações quando você usa nosso aplicativo de alarme com detecção de movimento. O WakeWalk oferece um período de teste gratuito de 7 dias seguido por um modelo de assinatura para acesso contínuo.</p>
-                
-                <h2 data-i18n="privacy_section2">2. Informações que Coletamos</h2>
-                <p data-i18n="privacy_collect_info">Nós coletamos as seguintes categorias de informações:</p>
-                <ul>
-                    <li data-i18n="privacy_collect1">Informações pessoais: Nome, endereço de e-mail, quando você se registra.</li>
-                    <li data-i18n="privacy_collect2">Informações de uso: Dados sobre como você usa o aplicativo, incluindo estatísticas de alarme, padrões de sono.</li>
-                    <li data-i18n="privacy_collect3">Informações de dispositivo: Modelo do dispositivo, sistema operacional, sensores disponíveis.</li>
-                    <li data-i18n="privacy_collect4">Dados de movimento: Quando você completa uma missão de movimento, registramos dados do acelerômetro e pedômetro.</li>
-                </ul>
-                
-                <h2 data-i18n="privacy_section3">3. Como Usamos Suas Informações</h2>
-                <p data-i18n="privacy_use_info">Usamos suas informações para:</p>
-                <ul>
-                    <li data-i18n="privacy_use1">Fornecer e melhorar nossos serviços.</li>
-                    <li data-i18n="privacy_use2">Personalizar sua experiência no aplicativo.</li>
-                    <li data-i18n="privacy_use3">Processar assinaturas e pagamentos.</li>
-                    <li data-i18n="privacy_use4">Analisar tendências de uso e melhorar recursos.</li>
-                    <li data-i18n="privacy_use5">Comunicar atualizações e novidades sobre o aplicativo.</li>
-                </ul>
-                
-                <h2 data-i18n="privacy_section4">4. Compartilhamento de Informações</h2>
-                <p data-i18n="privacy_share_info">Não compartilhamos suas informações pessoais com terceiros, exceto nas seguintes circunstâncias:</p>
-                <ul>
-                    <li data-i18n="privacy_share1">Com provedores de serviços que nos ajudam a operar o aplicativo.</li>
-                    <li data-i18n="privacy_share2">Quando exigido por lei ou para proteger nossos direitos legais.</li>
-                    <li data-i18n="privacy_share3">Em caso de fusão, venda ou transferência de ativos.</li>
-                </ul>
-                
-                <h2 data-i18n="privacy_section5">5. Seus Direitos e Escolhas</h2>
-                <p data-i18n="privacy_rights">Você tem certos direitos sobre suas informações pessoais, incluindo:</p>
-                <ul>
-                    <li data-i18n="privacy_rights1">Acessar e obter uma cópia de suas informações.</li>
-                    <li data-i18n="privacy_rights2">Corrigir informações imprecisas.</li>
-                    <li data-i18n="privacy_rights3">Excluir suas informações em certas circunstâncias.</li>
-                    <li data-i18n="privacy_rights4">Recusar o processamento de seus dados para marketing.</li>
-                </ul>
-                
-                <h2 data-i18n="privacy_section6">6. Segurança de Dados</h2>
-                <p data-i18n="privacy_security">Implementamos medidas de segurança técnicas e organizacionais para proteger suas informações contra acesso não autorizado, perda ou alteração.</p>
-                
-                <h2 data-i18n="privacy_section7">7. Alterações nesta Política</h2>
-                <p data-i18n="privacy_changes">Podemos atualizar esta Política de Privacidade periodicamente. Notificaremos você sobre mudanças significativas por meio do aplicativo ou por e-mail.</p>
-                
-                <h2 data-i18n="privacy_section8">8. Contato</h2>
-                <p data-i18n="privacy_contact">Se você tiver dúvidas sobre esta Política de Privacidade, entre em contato conosco em givoxmobile@gmail.com.</p>
-                
-                <a href="index.html" class="back-link">← Voltar para a página inicial</a>
-            </div>
-        </div>
-    </section>
+<header class="hdr">
+  <div class="wrap hdr-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><img src="assets/wakewalk-mark.svg" alt="" /></span>
+      <span>WakeWalk</span>
+    </a>
+    <nav>
+      <a href="index.html#how" data-i18n="nav_how">Como funciona</a>
+      <a href="index.html#features" data-i18n="nav_features">Recursos</a>
+      <a href="index.html#sleep" data-i18n="nav_sleep">Sono</a>
+      <a href="index.html#pricing" data-i18n="nav_pricing">Assinatura</a>
+    </nav>
+    <div class="hdr-right">
+      <div class="lang" role="group" aria-label="Idioma">
+        <button data-lang="pt" class="on">PT</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <a href="index.html#download" class="btn btn-primary" data-i18n="hdr_cta">Baixar app</a>
+    </div>
+  </div>
+</header>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <div class="footer-logo-container">
-                        <img src="images/logo.png" alt="Logo WakeWalk">
-                    </div>
-                    <p data-i18n="footer_rights">© 2025 WakeWalk. Todos os direitos reservados.</p>
-                </div>
-                <div class="footer-links">
-                    <h4 data-i18n="footer_links">Links Úteis</h4>
-                    <ul>
-                        <li><a href="privacy-policy.html" data-i18n="privacy_policy">Política de Privacidade</a></li>
-                        <li><a href="terms-of-use.html" data-i18n="terms_of_use">Termos de Uso</a></li>
-                        <li><a href="account-deletion.html" data-i18n="account_deletion">Exclusão de Conta</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4 data-i18n="contact">Contato</h4>
-                    <p>Email: <a href="mailto:givoxmobile@gmail.com">givoxmobile@gmail.com</a></p>
-                </div>
-            </div>
-        </div>
-    </footer>
+<main class="legal-main">
+  <section class="legal-hero">
+    <div class="wrap">
+      <a href="index.html" class="legal-back-top"><span class="ww-icon">arrow_back</span><span data-i18n="back_home">Voltar para a página inicial</span></a>
+      <span class="eyebrow"><span class="ww-icon fill">shield</span><span data-i18n="pv_eyebrow">Privacidade</span></span>
+      <h1 class="legal-title" data-i18n="pv_title">Política de Privacidade</h1>
+      <p class="legal-lead" data-i18n="pv_lead">Como o WakeWalk coleta, usa e protege as suas informações. Em resumo: sem conta, sem login, e seus dados ficam no seu aparelho.</p>
+      <span class="legal-date"><span class="ww-icon">update</span><span data-i18n="pv_updated">Última atualização: 1 de Janeiro de 2025</span></span>
+    </div>
+  </section>
 
-    <!-- Scripts de internacionalização -->
-    <script src="js/translations.js"></script>
-    <script src="js/i18n.js"></script>
+  <div class="wrap">
+    <div class="legal-layout">
+      <aside class="legal-toc">
+        <h4 data-i18n="toc_title">Nesta página</h4>
+        <ol></ol>
+      </aside>
+
+      <article class="legal-article numbered">
+        <div class="sec-block reveal">
+          <h2 data-i18n="pv_s1_h">Introdução</h2>
+          <p data-i18n="pv_s1_p">Obrigado por usar o WakeWalk. Esta Política de Privacidade descreve como coletamos, usamos e compartilhamos suas informações quando você usa nosso aplicativo de alarme com detecção de movimento. O WakeWalk oferece um período de teste gratuito de 3 dias seguido por um modelo de assinatura para acesso contínuo.</p>
+        </div>
+
+        <div class="sec-block reveal">
+          <h2 data-i18n="pv_s2_h">Informações que coletamos</h2>
+          <p data-i18n="pv_s2_p">Nós coletamos as seguintes categorias de informações:</p>
+          <ul>
+            <li data-i18n="pv_s2_1">Sem conta: o WakeWalk não exige cadastro nem login e não pede seu nome ou e-mail para funcionar.</li>
+            <li data-i18n="pv_s2_2">Dados no aparelho: seus alarmes, preferências, estatísticas, sequências e status do teste/assinatura ficam armazenados apenas no seu dispositivo.</li>
+            <li data-i18n="pv_s2_3">Análises de uso anônimas: usamos o Firebase Analytics (Google) para registrar eventos como alarme criado, missão concluída ou conquista desbloqueada, sem identificar você pessoalmente.</li>
+            <li data-i18n="pv_s2_4">Diagnóstico de falhas: usamos o Firebase Crashlytics (Google) para coletar relatórios de erro e dados técnicos do aparelho e corrigir problemas.</li>
+            <li data-i18n="pv_s2_5">Câmera e sensores de movimento: para validar as missões, o app usa a câmera e os sensores de passos/movimento do aparelho. As fotos são analisadas no próprio dispositivo e descartadas em seguida — nunca são enviadas ou armazenadas. O app pode pedir permissão de localização para apoiar a detecção de movimento; esses dados não são coletados nem compartilhados por nós.</li>
+            <li data-i18n="pv_s2_6">Compras: as assinaturas são processadas pela Google Play e pela App Store; não recebemos nem armazenamos os dados do seu pagamento.</li>
+          </ul>
+        </div>
+
+        <div class="sec-block reveal">
+          <h2 data-i18n="pv_s3_h">Como usamos suas informações</h2>
+          <p data-i18n="pv_s3_p">Usamos suas informações para:</p>
+          <ul>
+            <li data-i18n="pv_s3_1">Operar e melhorar o aplicativo e seus recursos.</li>
+            <li data-i18n="pv_s3_2">Entender, de forma agregada e anônima, como os recursos são usados.</li>
+            <li data-i18n="pv_s3_3">Diagnosticar e corrigir falhas e problemas técnicos.</li>
+            <li data-i18n="pv_s3_4">Processar e validar sua assinatura.</li>
+          </ul>
+        </div>
+
+        <div class="sec-block reveal">
+          <h2 data-i18n="pv_s4_h">Compartilhamento de informações</h2>
+          <p data-i18n="pv_s4_p">Não compartilhamos suas informações pessoais com terceiros, exceto nas seguintes circunstâncias:</p>
+          <ul>
+            <li data-i18n="pv_s4_1">Com provedores de serviços que nos ajudam a operar o aplicativo.</li>
+            <li data-i18n="pv_s4_2">Quando exigido por lei ou para proteger nossos direitos legais.</li>
+            <li data-i18n="pv_s4_3">Em caso de fusão, venda ou transferência de ativos.</li>
+          </ul>
+        </div>
+
+        <div class="sec-block reveal">
+          <h2 data-i18n="pv_s5_h">Seus direitos e escolhas</h2>
+          <p data-i18n="pv_s5_p">Você tem certos direitos sobre suas informações pessoais, incluindo:</p>
+          <ul>
+            <li data-i18n="pv_s5_1">Acessar e obter uma cópia de suas informações.</li>
+            <li data-i18n="pv_s5_2">Corrigir informações imprecisas.</li>
+            <li data-i18n="pv_s5_3">Excluir suas informações em certas circunstâncias.</li>
+            <li data-i18n="pv_s5_4">Recusar o processamento de seus dados para marketing.</li>
+          </ul>
+        </div>
+
+        <div class="sec-block reveal">
+          <h2 data-i18n="pv_s6_h">Segurança de dados</h2>
+          <p data-i18n="pv_s6_p">Implementamos medidas de segurança técnicas e organizacionais para proteger suas informações contra acesso não autorizado, perda ou alteração.</p>
+        </div>
+
+        <div class="sec-block reveal">
+          <h2 data-i18n="pv_s7_h">Alterações nesta política</h2>
+          <p data-i18n="pv_s7_p">Podemos atualizar esta Política de Privacidade periodicamente. Notificaremos você sobre mudanças significativas por meio do aplicativo ou por e-mail.</p>
+        </div>
+
+        <div class="sec-block reveal">
+          <h2 data-i18n="pv_s8_h">Contato</h2>
+          <p data-i18n-html="pv_s8_p_html">Se você tiver dúvidas sobre esta Política de Privacidade, entre em contato conosco em <a href="mailto:givoxmobile@gmail.com">givoxmobile@gmail.com</a>.</p>
+          <div class="legal-bottom">
+            <a href="index.html" class="btn btn-soft"><span class="ww-icon">arrow_back</span><span data-i18n="back_home">Voltar para a página inicial</span></a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><span class="brand-mark"><img src="assets/wakewalk-mark.svg" alt="" /></span><span>WakeWalk</span></a>
+        <p class="footer-tag" data-i18n="footer_tag">O único despertador que garante que você levanta — acorde com movimento, comece o dia melhor.</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer_product">Produto</h4>
+        <ul class="footer-links">
+          <li><a href="index.html#features" data-i18n="footer_features">Recursos</a></li>
+          <li><a href="index.html#pricing" data-i18n="footer_pricing">Assinatura</a></li>
+          <li><a href="index.html#download" data-i18n="footer_download">Baixar</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer_legal">Legal</h4>
+        <ul class="footer-links">
+          <li><a href="privacy-policy.html" data-i18n="privacy">Política de Privacidade</a></li>
+          <li><a href="terms-of-use.html" data-i18n="terms">Termos de Uso</a></li>
+          <li><a href="account-deletion.html" data-i18n="account_del">Exclusão de Conta</a></li>
+          <li><a href="mailto:givoxmobile@gmail.com" data-i18n="footer_contact">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer_rights">© 2025 WakeWalk. Todos os direitos reservados.</p>
+      <p>givoxmobile@gmail.com</p>
+    </div>
+  </div>
+</footer>
+
+<script src="legal-i18n.js"></script>
 </body>
-</html> 
+</html>
