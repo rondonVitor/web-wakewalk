@@ -144,12 +144,14 @@ ul { margin: 0; padding: 0; list-style: none; }
   background: var(--ww-chip); border: 1px solid var(--ww-border-subtle);
   border-radius: var(--ww-r-pill); padding: 3px;
 }
-.lang button {
-  font-family: var(--ww-font-sans); font-size: 12.5px; font-weight: 700;
+/* landing: <a> por idioma (cada um tem URL própria) · páginas legais: <button> */
+.lang button, .lang a {
+  font-family: var(--ww-font-sans); font-size: 12.5px; font-weight: 700; line-height: normal;
   color: var(--ww-text-secondary); background: none; border: none; cursor: pointer;
   padding: 5px 11px; border-radius: var(--ww-r-pill); transition: all .18s;
 }
-.lang button.on { background: var(--ww-surface-3); color: var(--ww-text-primary); }
+.lang a:hover { color: var(--ww-text-primary); }
+.lang .on { background: var(--ww-surface-3); color: var(--ww-text-primary); }
 
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
@@ -238,7 +240,7 @@ section { position: relative; }
    Acessibilidade compartilhada (landing + páginas legais)
    ============================================================ */
 :focus-visible { outline: 2px solid var(--ww-primary); outline-offset: 3px; border-radius: 6px; }
-.btn:focus-visible, .lang button:focus-visible { outline-offset: 2px; }
+.btn:focus-visible, .lang button:focus-visible, .lang a:focus-visible { outline-offset: 2px; }
 .skip {
   position: absolute; left: 16px; top: -60px; z-index: 200;
   background: var(--ww-primary); color: var(--ww-on-primary); font-weight: 700;

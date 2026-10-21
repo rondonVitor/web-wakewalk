@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-page="pt">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,9 +8,9 @@
 <meta name="theme-color" content="#0B0D12" />
 <meta name="color-scheme" content="dark" />
 <link rel="canonical" href="https://rondonvitor.github.io/web-wakewalk/" />
-<link rel="alternate" hreflang="pt-BR" href="https://rondonvitor.github.io/web-wakewalk/?lang=pt" />
-<link rel="alternate" hreflang="en" href="https://rondonvitor.github.io/web-wakewalk/?lang=en" />
-<link rel="alternate" hreflang="es" href="https://rondonvitor.github.io/web-wakewalk/?lang=es" />
+<link rel="alternate" hreflang="pt-BR" href="https://rondonvitor.github.io/web-wakewalk/" />
+<link rel="alternate" hreflang="en" href="https://rondonvitor.github.io/web-wakewalk/en/" />
+<link rel="alternate" hreflang="es" href="https://rondonvitor.github.io/web-wakewalk/es/" />
 <link rel="alternate" hreflang="x-default" href="https://rondonvitor.github.io/web-wakewalk/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="WakeWalk" />
@@ -22,6 +22,23 @@
 <meta property="og:locale:alternate" content="en_US" />
 <meta property="og:locale:alternate" content="es_ES" />
 <meta name="twitter:card" content="summary" />
+<meta name="twitter:title" data-i18n-content="meta_title" content="WakeWalk — o despertador que só desliga quando você levanta" />
+<meta name="twitter:description" data-i18n-content="meta_desc" content="O Bip toca e só para quando você cumpre uma missão: caminhar, chacoalhar, fazer uma conta, digitar ou dizer uma frase. Grátis para começar, sem anúncios." />
+<meta name="twitter:image" content="https://rondonvitor.github.io/web-wakewalk/assets/app-icon.png" />
+<script data-root-only>
+  /* Só na raiz (PT): ?lang=, escolha salva ou idioma do navegador levam à página do idioma.
+     Robôs ficam na raiz; cada idioma tem a própria URL indexável (hreflang). */
+  (function () {
+    var want = null, L = ["pt", "en", "es"];
+    try { var q = new URLSearchParams(location.search).get("lang"); if (L.indexOf(q) > -1) { want = q; localStorage.setItem("ww_lang", q); } } catch (e) {}
+    try { if (!want) { var s = localStorage.getItem("ww_lang"); if (L.indexOf(s) > -1) want = s; } } catch (e) {}
+    if (!want && !/bot|crawl|spider|slurp|preview|facebookexternalhit|whatsapp|telegram/i.test(navigator.userAgent)) {
+      var n = (navigator.language || "").toLowerCase();
+      want = n.indexOf("es") === 0 ? "es" : n.indexOf("en") === 0 ? "en" : null;
+    }
+    if (want && want !== "pt") location.replace(want + "/" + location.hash);
+  })();
+</script>
 <link rel="icon" href="assets/app-icon.png" />
 <link rel="apple-touch-icon" href="assets/app-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -51,9 +68,9 @@
     </nav>
     <div class="hdr-right">
       <div class="lang" role="group" aria-label="Idioma" data-i18n-aria="lang_label">
-        <button type="button" data-lang="pt" class="on" aria-pressed="true" lang="pt-BR" title="Português">PT</button>
-        <button type="button" data-lang="en" aria-pressed="false" lang="en" title="English">EN</button>
-        <button type="button" data-lang="es" aria-pressed="false" lang="es" title="Español">ES</button>
+        <a href="./" data-lang="pt" hreflang="pt-BR" lang="pt-BR" title="Português" class="on" aria-current="page">PT</a>
+        <a href="en/" data-lang="en" hreflang="en" lang="en" title="English">EN</a>
+        <a href="es/" data-lang="es" hreflang="es" lang="es" title="Español">ES</a>
       </div>
       <a href="#download" class="btn btn-primary" data-i18n="hdr_cta">Baixar grátis</a>
     </div>
@@ -120,7 +137,7 @@
   <div class="wrap">
     <div class="sec-intro">
       <h2 id="missions-title" class="h2" data-i18n="ms_title">Escolha como você quer levantar</h2>
-      <p data-i18n="ms_sub">Cinco missões são grátis para sempre. O Premium traz as de câmera e deixa você juntar até três numa mesma manhã.</p>
+      <p data-i18n="ms_sub">Seis missões são grátis para sempre, incluindo a foto de um objeto. O Premium traz flexões, agachamentos, dança, foto do céu e QR code, e deixa você juntar até três numa mesma manhã.</p>
     </div>
 
     <div class="ms-layout">
@@ -130,9 +147,9 @@
           <span class="ms-bubble"><span class="ww-icon" id="ms-icon">directions_walk</span></span>
         </div>
         <div class="ms-info" aria-live="polite">
-          <span class="ms-tier" id="ms-tier" data-tier="free">Grátis</span>
-          <h3 id="ms-name">Caminhar</h3>
-          <p id="ms-desc">Conte passos de verdade pela casa. Você escolhe quantos.</p>
+          <span class="ms-tier" id="ms-tier" data-tier="free" data-i18n="ms_free">Grátis</span>
+          <h3 id="ms-name" data-i18n="m_walk">Caminhar</h3>
+          <p id="ms-desc" data-i18n="m_walk_d">Conte passos de verdade pela casa. Você escolhe quantos.</p>
         </div>
       </div>
 
@@ -145,6 +162,7 @@
             <li><button type="button" class="ms-btn" data-anim="idle" data-tier="free" aria-pressed="false"><span class="ww-icon" aria-hidden="true">calculate</span><span class="ms-n" data-i18n="m_math">Matemática</span><span class="ms-d" data-i18n="m_math_d" hidden>Resolva contas que acordam o cérebro, do nível fácil ao extremo.</span></button></li>
             <li><button type="button" class="ms-btn" data-anim="idle" data-tier="free" aria-pressed="false"><span class="ww-icon" aria-hidden="true">keyboard</span><span class="ms-n" data-i18n="m_typing">Digitação</span><span class="ms-d" data-i18n="m_typing_d" hidden>Digite a frase exatamente como aparece na tela.</span></button></li>
             <li><button type="button" class="ms-btn" data-anim="idle" data-tier="free" aria-pressed="false"><span class="ww-icon" aria-hidden="true">mic</span><span class="ms-n" data-i18n="m_voice">Diga a frase</span><span class="ms-d" data-i18n="m_voice_d" hidden>Fale em voz alta “Hoje eu levanto de primeira”. Funciona offline: sua voz não sai do celular.</span></button></li>
+            <li><button type="button" class="ms-btn" data-anim="idle" data-tier="free" aria-pressed="false"><span class="ww-icon" aria-hidden="true">photo_camera</span><span class="ms-n" data-i18n="m_photo">Foto</span><span class="ms-d" data-i18n="m_photo_d" hidden>Fotografe o objeto que você escolheu ao criar o alarme.</span></button></li>
           </ul>
         </div>
         <div class="ms-group">
@@ -153,7 +171,6 @@
             <li><button type="button" class="ms-btn" data-anim="pushUp" data-tier="premium" aria-pressed="false"><span class="ww-icon" aria-hidden="true">fitness_center</span><span class="ms-n" data-i18n="m_pushup">Flexões</span><span class="ms-d" data-i18n="m_pushup_d" hidden>A câmera conta cada flexão completa. Meio movimento não vale.</span></button></li>
             <li><button type="button" class="ms-btn" data-anim="squat" data-tier="premium" aria-pressed="false"><span class="ww-icon" aria-hidden="true">accessibility_new</span><span class="ms-n" data-i18n="m_squat">Agachamentos</span><span class="ms-d" data-i18n="m_squat_d" hidden>Desça e suba na frente da câmera. O celular confere o movimento.</span></button></li>
             <li><button type="button" class="ms-btn" data-anim="dance" data-tier="premium" aria-pressed="false"><span class="ww-icon" aria-hidden="true">music_note</span><span class="ms-n" data-i18n="m_dance">Dança</span><span class="ms-d" data-i18n="m_dance_d" hidden>Dance na frente da câmera até o medidor de movimento encher, com trilha própria.</span></button></li>
-            <li><button type="button" class="ms-btn" data-anim="idle" data-tier="premium" aria-pressed="false"><span class="ww-icon" aria-hidden="true">photo_camera</span><span class="ms-n" data-i18n="m_photo">Foto</span><span class="ms-d" data-i18n="m_photo_d" hidden>Fotografe o objeto que você escolheu ao criar o alarme.</span></button></li>
             <li><button type="button" class="ms-btn" data-anim="idle" data-tier="premium" aria-pressed="false"><span class="ww-icon" aria-hidden="true">wb_twilight</span><span class="ms-n" data-i18n="m_sky">Foto do céu</span><span class="ms-d" data-i18n="m_sky_d" hidden>Vá até a janela e fotografe o céu. Se a foto não passar, você troca de missão: o alarme nunca trava.</span></button></li>
             <li><button type="button" class="ms-btn" data-anim="walking" data-tier="premium" aria-pressed="false"><span class="ww-icon" aria-hidden="true">qr_code_scanner</span><span class="ms-n" data-i18n="m_qr">QR code</span><span class="ms-d" data-i18n="m_qr_d" hidden>Cole um QR code longe da cama. Para desligar, você precisa ir até ele.</span></button></li>
             <li><button type="button" class="ms-btn" data-anim="celebrate" data-tier="premium" aria-pressed="false"><span class="ww-icon" aria-hidden="true">stacks</span><span class="ms-n" data-i18n="m_combo">Combos</span><span class="ms-d" data-i18n="m_combo_d" hidden>Junte até três missões em sequência: passos, depois uma conta, depois uma foto.</span></button></li>
@@ -263,7 +280,7 @@
   <div class="wrap">
     <div class="sec-intro">
       <h2 id="pricing-title" class="h2" data-i18n="pr_title">Grátis para sempre. Premium se quiser mais.</h2>
-      <p data-i18n="pr_sub">O plano grátis não expira e não tem anúncios. O Premium libera as missões de câmera, alarmes ilimitados e combos.</p>
+      <p data-i18n="pr_sub">O plano grátis não expira e não tem anúncios. O Premium traz flexões, dança e combos de 3 missões, além de alarmes ilimitados.</p>
     </div>
     <div class="plans">
       <div class="plan">
@@ -271,7 +288,7 @@
         <p class="plan-per" data-i18n="pl_free_per">Para sempre, sem cartão</p>
         <ul class="plan-feat">
           <li><span class="ww-icon" aria-hidden="true">check</span><span data-i18n="pl_free_1">Até 2 alarmes</span></li>
-          <li><span class="ww-icon" aria-hidden="true">check</span><span data-i18n="pl_free_2">Caminhar, chacoalhar, matemática, digitação e “Diga a frase”</span></li>
+          <li><span class="ww-icon" aria-hidden="true">check</span><span data-i18n="pl_free_2">Caminhar, chacoalhar, matemática, digitação, “Diga a frase” e foto de um objeto</span></li>
           <li><span class="ww-icon" aria-hidden="true">check</span><span data-i18n="pl_free_3">Sequência, congelamentos e card “Levantei”</span></li>
           <li><span class="ww-icon" aria-hidden="true">check</span><span data-i18n="pl_free_4">Sons para dormir e briefing matinal</span></li>
         </ul>
@@ -282,7 +299,7 @@
         <p class="plan-per" data-i18n="pl_prem_per">Mensal, anual ou vitalício. O preço aparece na loja, conforme a sua região.</p>
         <ul class="plan-feat">
           <li><span class="ww-icon" aria-hidden="true">check</span><span data-i18n="pl_prem_1">Tudo do plano grátis</span></li>
-          <li><span class="ww-icon" aria-hidden="true">check</span><span data-i18n="pl_prem_2">Flexões, agachamentos, dança, foto, foto do céu e QR code</span></li>
+          <li><span class="ww-icon" aria-hidden="true">check</span><span data-i18n="pl_prem_2">Flexões, agachamentos, dança, foto do céu e QR code</span></li>
           <li><span class="ww-icon" aria-hidden="true">check</span><span data-i18n="pl_prem_3">Alarmes ilimitados</span></li>
           <li><span class="ww-icon" aria-hidden="true">check</span><span data-i18n="pl_prem_4">Combos de até 3 missões</span></li>
         </ul>
@@ -307,7 +324,7 @@
   <div class="wrap faq-wrap">
     <h2 id="faq-title" class="h2" data-i18n="fq_title">Perguntas que a gente ouve</h2>
     <div class="faq-list">
-      <details><summary><span data-i18n="fq_1_q">Preciso pagar para usar?</span><span class="ww-icon" aria-hidden="true">expand_more</span></summary><p data-i18n="fq_1_a">Não. O plano grátis não expira, não tem anúncios e inclui cinco missões, até 2 alarmes, sequência e sons para dormir.</p></details>
+      <details><summary><span data-i18n="fq_1_q">Preciso pagar para usar?</span><span class="ww-icon" aria-hidden="true">expand_more</span></summary><p data-i18n="fq_1_a">Não. O plano grátis não expira, não tem anúncios e inclui seis missões, até 2 alarmes, sequência e sons para dormir.</p></details>
       <details><summary><span data-i18n="fq_2_q">A câmera ou o microfone enviam alguma coisa?</span><span class="ww-icon" aria-hidden="true">expand_more</span></summary><p data-i18n="fq_2_a">Não. Flexões, agachamentos, dança, fotos e a frase falada são analisados no próprio celular. Nada é enviado para servidores.</p></details>
       <details><summary><span data-i18n="fq_3_q">E se a missão não funcionar na hora?</span><span class="ww-icon" aria-hidden="true">expand_more</span></summary><p data-i18n="fq_3_a">O alarme nunca fica travado. Se a foto do céu não passar, por exemplo, você escolhe outra missão para desligar.</p></details>
       <details><summary><span data-i18n="fq_4_q">Como cancelo o teste do Premium?</span><span class="ww-icon" aria-hidden="true">expand_more</span></summary><p data-i18n="fq_4_a">Na App Store ou no Google Play: Gerenciar, depois Cancelar assinatura. O app avisa 2 dias antes da primeira cobrança.</p></details>
