@@ -1,548 +1,360 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-page="pt">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>WakeWalk — Acorde com movimento</title>
+<title data-i18n="meta_title">WakeWalk — o despertador que só desliga quando você levanta</title>
+<meta name="description" data-i18n-content="meta_desc" content="O Bip toca e só para quando você cumpre uma missão: caminhar, chacoalhar, fazer uma conta, digitar ou dizer uma frase. Grátis para começar, sem anúncios." />
+<meta name="theme-color" content="#0B0D12" />
+<meta name="color-scheme" content="dark" />
+<link rel="canonical" href="https://rondonvitor.github.io/web-wakewalk/" />
+<link rel="alternate" hreflang="pt-BR" href="https://rondonvitor.github.io/web-wakewalk/" />
+<link rel="alternate" hreflang="en" href="https://rondonvitor.github.io/web-wakewalk/en/" />
+<link rel="alternate" hreflang="es" href="https://rondonvitor.github.io/web-wakewalk/es/" />
+<link rel="alternate" hreflang="x-default" href="https://rondonvitor.github.io/web-wakewalk/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="WakeWalk" />
+<meta property="og:url" content="https://rondonvitor.github.io/web-wakewalk/" />
+<meta property="og:title" data-i18n-content="meta_title" content="WakeWalk — o despertador que só desliga quando você levanta" />
+<meta property="og:description" data-i18n-content="meta_desc" content="O Bip toca e só para quando você cumpre uma missão: caminhar, chacoalhar, fazer uma conta, digitar ou dizer uma frase. Grátis para começar, sem anúncios." />
+<meta property="og:image" content="https://rondonvitor.github.io/web-wakewalk/assets/app-icon.png" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" data-i18n-content="meta_title" content="WakeWalk — o despertador que só desliga quando você levanta" />
+<meta name="twitter:description" data-i18n-content="meta_desc" content="O Bip toca e só para quando você cumpre uma missão: caminhar, chacoalhar, fazer uma conta, digitar ou dizer uma frase. Grátis para começar, sem anúncios." />
+<meta name="twitter:image" content="https://rondonvitor.github.io/web-wakewalk/assets/app-icon.png" />
+<script data-root-only>
+  /* Só na raiz (PT): ?lang=, escolha salva ou idioma do navegador levam à página do idioma.
+     Robôs ficam na raiz; cada idioma tem a própria URL indexável (hreflang). */
+  (function () {
+    var want = null, L = ["pt", "en", "es"];
+    try { var q = new URLSearchParams(location.search).get("lang"); if (L.indexOf(q) > -1) { want = q; localStorage.setItem("ww_lang", q); } } catch (e) {}
+    try { if (!want) { var s = localStorage.getItem("ww_lang"); if (L.indexOf(s) > -1) want = s; } } catch (e) {}
+    if (!want && !/bot|crawl|spider|slurp|preview|facebookexternalhit|whatsapp|telegram/i.test(navigator.userAgent)) {
+      var n = (navigator.language || "").toLowerCase();
+      want = n.indexOf("es") === 0 ? "es" : n.indexOf("en") === 0 ? "en" : null;
+    }
+    if (want && want !== "pt") location.replace(want + "/" + location.hash);
+  })();
+</script>
 <link rel="icon" href="assets/app-icon.png" />
+<link rel="apple-touch-icon" href="assets/app-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0..1,0&display=swap" />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0..1,0&icon_names=ac_unit,accessibility_new,bedtime,calculate,check,directions_walk,expand_more,fitness_center,keyboard,local_fire_department,lock,mic,music_note,nightlight,notifications,photo_camera,qr_code_scanner,shield_lock,stacks,vibration,volume_down,volume_off,volume_up,wb_sunny,wb_twilight,widgets&display=block" />
 <link rel="stylesheet" href="landing.css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":"WakeWalk","operatingSystem":"Android, iOS","applicationCategory":"LifestyleApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://rondonvitor.github.io/web-wakewalk/"}
+</script>
 </head>
-<body>
+<body class="home">
+<a class="skip" href="#main" data-i18n="skip">Pular para o conteúdo</a>
 
 <!-- ============================ HEADER ============================ -->
 <header class="hdr">
   <div class="wrap hdr-inner">
     <a class="brand" href="#top">
-      <span class="brand-mark"><img src="assets/wakewalk-mark.svg" alt="" /></span>
+      <span class="brand-mark"><img src="assets/wakewalk-mark.svg" alt="" width="32" height="32" /></span>
       <span>WakeWalk</span>
     </a>
-    <nav>
+    <nav aria-label="Principal" data-i18n-aria="nav_label">
+      <a href="#missions" data-i18n="nav_missions">Missões</a>
       <a href="#how" data-i18n="nav_how">Como funciona</a>
-      <a href="#features" data-i18n="nav_features">Recursos</a>
-      <a href="#sleep" data-i18n="nav_sleep">Sono</a>
-      <a href="#pricing" data-i18n="nav_pricing">Assinatura</a>
+      <a href="#night" data-i18n="nav_night">À noite</a>
+      <a href="#pricing" data-i18n="nav_pricing">Premium</a>
     </nav>
     <div class="hdr-right">
-      <div class="lang" role="group" aria-label="Idioma">
-        <button data-lang="pt" class="on">PT</button>
-        <button data-lang="en">EN</button>
+      <div class="lang" role="group" aria-label="Idioma" data-i18n-aria="lang_label">
+        <a href="./" data-lang="pt" hreflang="pt-BR" lang="pt-BR" title="Português" class="on" aria-current="page">PT</a>
+        <a href="en/" data-lang="en" hreflang="en" lang="en" title="English">EN</a>
+        <a href="es/" data-lang="es" hreflang="es" lang="es" title="Español">ES</a>
       </div>
       <a href="#download" class="btn btn-primary" data-i18n="hdr_cta">Baixar grátis</a>
     </div>
   </div>
 </header>
 
-<main id="top">
+<main id="main">
+<span id="top"></span>
 
 <!-- ============================ HERO ============================ -->
-<section class="hero">
+<section class="hero" aria-labelledby="hero-title">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <span class="hero-badge">
-        <span class="dot"><span class="ww-icon fill">check</span></span>
-        <span data-i18n="hero_badge">Grátis para começar · sem anúncios</span>
-      </span>
-      <h1>
-        <span data-i18n="hero_title_1">Acorde com </span><span class="grad" data-i18n="hero_title_grad">movimento</span><span data-i18n="hero_title_2">, não só com som.</span>
-      </h1>
-      <p class="hero-sub" data-i18n="hero_sub">O WakeWalk é o despertador que garante que você sai da cama: ele só desliga quando você completa uma missão de movimento. Impossível voltar a dormir.</p>
+      <h1 id="hero-title" data-i18n="hero_title">O Bip só para de tocar quando você sai da cama.</h1>
+      <p class="hero-sub" data-i18n="hero_sub">WakeWalk é o despertador com missões. Para desligar, você caminha, chacoalha o celular, resolve uma conta ou diz uma frase em voz alta. Quando termina, já está de pé.</p>
       <div class="hero-cta">
-        <a href="#download" class="btn btn-sunrise btn-lg" data-i18n="hero_cta_primary">Começar grátis</a>
-        <a href="#how" class="btn btn-ghost btn-lg" data-i18n="hero_cta_secondary">Ver como funciona</a>
+        <a href="#download" class="btn btn-primary btn-lg" data-i18n="hero_cta">Baixar grátis</a>
+        <a href="#missions" class="btn btn-ghost btn-lg" data-i18n="hero_cta_2">Ver as missões</a>
       </div>
-      <div class="hero-proof">
-        <div class="stat"><div class="v num" data-i18n="proof_1_v">25</div><div class="l" data-i18n="proof_1_l">passos pra desligar</div></div>
-        <div class="div"></div>
-        <div class="stat"><div class="v num" data-i18n="proof_2_v">4</div><div class="l" data-i18n="proof_2_l">níveis de dificuldade</div></div>
-        <div class="div"></div>
-        <div class="stat"><div class="v num" data-i18n="proof_3_v">8</div><div class="l" data-i18n="proof_3_l">missões para escolher</div></div>
-      </div>
+      <p class="hero-note" data-i18n="hero_note">Grátis para começar e sem anúncios. Para iPhone e Android.</p>
     </div>
 
-    <div class="hero-phones">
-      <div class="hero-glow"></div>
-
-      <!-- back phone: alarms home -->
-      <div class="phone hero-phone-back">
-        <div class="notch"></div>
-        <div class="phone-screen">
-          <div class="statusbar"><span>9:41</span><span class="sb-icons"><span class="ww-icon">signal_cellular_alt</span><span class="ww-icon">wifi</span><span class="ww-icon fill">battery_full</span></span></div>
-          <div class="scr-pad">
-            <div class="sleep-hero" style="background:var(--ww-surface-2);border:1px solid var(--ww-border-subtle);">
-              <div style="position:absolute;inset:0;opacity:.55;background:radial-gradient(80% 90% at 80% 0%, var(--ww-sun-b) 0%, var(--ww-sun-a) 36%, transparent 60%);"></div>
-              <div class="lbl" style="color:#fff;opacity:.85;">PRÓXIMO ALARME</div>
-              <div class="big" style="font-size:46px;">06:30</div>
-              <div class="meta" style="color:rgba(255,255,255,.85);">Em 8h 12min · Missão de movimento</div>
-            </div>
-            <div class="recur-card" style="margin-top:14px;padding:16px;">
-              <div class="recur-top">
-                <div class="recur-time" style="font-size:30px;">07:15<small>Sáb</small></div>
-                <div class="switch" style="background:var(--ww-track);width:46px;height:27px;"><i style="left:3px;right:auto;width:21px;height:21px;background:var(--ww-text-tertiary);"></i></div>
-              </div>
-            </div>
-            <div class="recur-card" style="margin-top:12px;padding:16px;">
-              <div class="recur-top">
-                <div class="recur-time" style="font-size:30px;">06:00<small>Seg–Sex</small></div>
-                <div class="switch" style="width:46px;height:27px;"><i style="width:21px;height:21px;"></i></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- main phone: movement mission (the signature screen) -->
-      <div class="phone hero-phone-main float">
-        <div class="notch"></div>
-        <div class="phone-screen mission-screen">
-          <div class="mission-wash"></div>
-          <div class="mission-inner">
-            <div class="mission-x"><span class="ww-icon">close</span></div>
-            <div class="mission-label" data-i18n="mission_label">Missão de movimento</div>
-            <div class="ring-wrap">
-              <div class="ring">
-                <svg width="210" height="210" viewBox="0 0 210 210">
-                  <defs>
-                    <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stop-color="#4F46E5" />
-                      <stop offset="54%" stop-color="#C53A8E" />
-                      <stop offset="100%" stop-color="#FF9F45" />
-                    </linearGradient>
-                  </defs>
-                  <circle cx="105" cy="105" r="95" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="14" />
-                  <circle cx="105" cy="105" r="95" fill="none" stroke="url(#ringGrad)" stroke-width="14" stroke-linecap="round" stroke-dasharray="596.9" stroke-dashoffset="167.1" />
-                </svg>
-                <div class="ring-center">
-                  <span class="ww-icon">directions_walk</span>
-                  <span class="steps">18</span>
-                  <span class="of" data-i18n="mission_of">de 25 passos</span>
-                </div>
-              </div>
-            </div>
-            <div class="mission-msg" data-i18n="mission_msg">Quase lá!</div>
-            <div class="mission-hint" data-i18n="mission_hint">Não pare — falta pouco</div>
-          </div>
-        </div>
+    <div class="clock-stage" aria-hidden="true">
+      <div class="bip bip-hero" data-anim="ringing" data-glow="0"></div>
+      <p class="clock-time num">06:30</p>
+      <p class="clock-day" data-i18n="hero_day">Amanhã</p>
+      <div class="clock-mission">
+        <span class="ww-icon">directions_walk</span>
+        <span data-i18n="hero_mission">Caminhe 25 passos para desligar</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================ HOW IT WORKS ============================ -->
-<section id="how" class="sec">
+<!-- ============================ HOW (sequência real) ============================ -->
+<section id="how" class="sec how" aria-labelledby="how-title">
   <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow"><span class="ww-icon">bolt</span><span data-i18n="how_eyebrow">Como funciona</span></span>
-      <h2 data-i18n="how_title">Três passos entre você e a cama desfeita</h2>
-      <p data-i18n="how_sub">Configure uma vez. Toda manhã o WakeWalk transforma o acordar num pequeno desafio que você sempre vence.</p>
+    <h2 id="how-title" class="h2" data-i18n="how_title">Uma manhã com o Bip</h2>
+    <ol class="how-steps">
+      <li class="how-step">
+        <div class="bip bip-step" data-anim="sleeping" role="img" aria-label="Bip dormindo" data-i18n-aria="bip_sleeping"></div>
+        <span class="how-n num" aria-hidden="true">1</span>
+        <h3 data-i18n="how_1_t">À noite, você escolhe a missão</h3>
+        <p data-i18n="how_1_d">Defina a hora, os dias da semana, a missão e a dificuldade. Leva meio minuto.</p>
+      </li>
+      <li class="how-step">
+        <div class="bip bip-step" data-anim="ringing" role="img" aria-label="Bip tocando" data-i18n-aria="bip_ringing"></div>
+        <span class="how-n num" aria-hidden="true">2</span>
+        <h3 data-i18n="how_2_t">De manhã, o Bip toca</h3>
+        <p data-i18n="how_2_d">Com o despertar gradual, o som começa baixo e cresce enquanto o sol nasce na tela. Para desligar, só cumprindo a missão.</p>
+      </li>
+      <li class="how-step">
+        <div class="bip bip-step" data-anim="walking" role="img" aria-label="Bip caminhando" data-i18n-aria="bip_walking"></div>
+        <span class="how-n num" aria-hidden="true">3</span>
+        <h3 data-i18n="how_3_t">Você levanta e cumpre</h3>
+        <p data-i18n="how_3_d">Alguns passos pela casa, uma conta, uma frase. Quando o alarme silencia, você já saiu da cama.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================ MISSIONS (interativo) ============================ -->
+<section id="missions" class="sec missions" aria-labelledby="missions-title">
+  <div class="wrap">
+    <div class="sec-intro">
+      <h2 id="missions-title" class="h2" data-i18n="ms_title">Escolha como você quer levantar</h2>
+      <p data-i18n="ms_sub">Seis missões são grátis para sempre, incluindo a foto de um objeto. O Premium traz flexões, agachamentos, dança, foto do céu e QR code, e deixa você juntar até três numa mesma manhã.</p>
     </div>
-    <div class="steps3">
-      <div class="step-card reveal">
-        <div class="step-num num">01</div>
-        <div class="step-ic"><span class="ww-icon">alarm_add</span></div>
-        <h3 data-i18n="how_1_t">Crie o alarme</h3>
-        <p data-i18n="how_1_d">Escolha o horário, os dias da semana, o som e a missão. Recorrência total no seu controle.</p>
+
+    <div class="ms-layout">
+      <div class="ms-stage">
+        <div class="ms-scene" aria-hidden="true">
+          <div class="bip bip-stage" data-anim="walking" id="ms-bip"></div>
+          <span class="ms-bubble"><span class="ww-icon" id="ms-icon">directions_walk</span></span>
+        </div>
+        <div class="ms-info" aria-live="polite">
+          <span class="ms-tier" id="ms-tier" data-tier="free" data-i18n="ms_free">Grátis</span>
+          <h3 id="ms-name" data-i18n="m_walk">Caminhar</h3>
+          <p id="ms-desc" data-i18n="m_walk_d">Conte passos de verdade pela casa. Você escolhe quantos.</p>
+        </div>
       </div>
-      <div class="step-card reveal">
-        <div class="step-num num">02</div>
-        <div class="step-ic" style="background:color-mix(in srgb,var(--ww-sun-b) 16%,transparent);color:var(--ww-sun-c);"><span class="ww-icon fill">notifications_active</span></div>
-        <h3 data-i18n="how_2_t">Ele toca de manhã</h3>
-        <p data-i18n="how_2_d">Um amanhecer luminoso e um som que não dá pra ignorar. Soneca só se você quiser — e nada de soneca infinita.</p>
+
+      <div class="ms-lists">
+        <div class="ms-group">
+          <h3 class="ms-gh" data-i18n="ms_free">Grátis</h3>
+          <ul class="ms-list">
+            <li><button type="button" class="ms-btn" data-anim="walking" data-tier="free" aria-pressed="true"><span class="ww-icon" aria-hidden="true">directions_walk</span><span class="ms-n" data-i18n="m_walk">Caminhar</span><span class="ms-d" data-i18n="m_walk_d" hidden>Conte passos de verdade pela casa. Você escolhe quantos.</span></button></li>
+            <li><button type="button" class="ms-btn" data-anim="ringing" data-tier="free" aria-pressed="false"><span class="ww-icon" aria-hidden="true">vibration</span><span class="ms-n" data-i18n="m_shake">Chacoalhar</span><span class="ms-d" data-i18n="m_shake_d" hidden>Balance o celular até a barra encher. Difícil fazer isso dormindo.</span></button></li>
+            <li><button type="button" class="ms-btn" data-anim="idle" data-tier="free" aria-pressed="false"><span class="ww-icon" aria-hidden="true">calculate</span><span class="ms-n" data-i18n="m_math">Matemática</span><span class="ms-d" data-i18n="m_math_d" hidden>Resolva contas que acordam o cérebro, do nível fácil ao extremo.</span></button></li>
+            <li><button type="button" class="ms-btn" data-anim="idle" data-tier="free" aria-pressed="false"><span class="ww-icon" aria-hidden="true">keyboard</span><span class="ms-n" data-i18n="m_typing">Digitação</span><span class="ms-d" data-i18n="m_typing_d" hidden>Digite a frase exatamente como aparece na tela.</span></button></li>
+            <li><button type="button" class="ms-btn" data-anim="idle" data-tier="free" aria-pressed="false"><span class="ww-icon" aria-hidden="true">mic</span><span class="ms-n" data-i18n="m_voice">Diga a frase</span><span class="ms-d" data-i18n="m_voice_d" hidden>Fale em voz alta “Hoje eu levanto de primeira”. Funciona offline: sua voz não sai do celular.</span></button></li>
+            <li><button type="button" class="ms-btn" data-anim="idle" data-tier="free" aria-pressed="false"><span class="ww-icon" aria-hidden="true">photo_camera</span><span class="ms-n" data-i18n="m_photo">Foto</span><span class="ms-d" data-i18n="m_photo_d" hidden>Fotografe o objeto que você escolheu ao criar o alarme.</span></button></li>
+          </ul>
+        </div>
+        <div class="ms-group">
+          <h3 class="ms-gh"><span class="ww-icon" aria-hidden="true">lock</span><span data-i18n="ms_premium">Premium</span></h3>
+          <ul class="ms-list">
+            <li><button type="button" class="ms-btn" data-anim="pushUp" data-tier="premium" aria-pressed="false"><span class="ww-icon" aria-hidden="true">fitness_center</span><span class="ms-n" data-i18n="m_pushup">Flexões</span><span class="ms-d" data-i18n="m_pushup_d" hidden>A câmera conta cada flexão completa. Meio movimento não vale.</span></button></li>
+            <li><button type="button" class="ms-btn" data-anim="squat" data-tier="premium" aria-pressed="false"><span class="ww-icon" aria-hidden="true">accessibility_new</span><span class="ms-n" data-i18n="m_squat">Agachamentos</span><span class="ms-d" data-i18n="m_squat_d" hidden>Desça e suba na frente da câmera. O celular confere o movimento.</span></button></li>
+            <li><button type="button" class="ms-btn" data-anim="dance" data-tier="premium" aria-pressed="false"><span class="ww-icon" aria-hidden="true">music_note</span><span class="ms-n" data-i18n="m_dance">Dança</span><span class="ms-d" data-i18n="m_dance_d" hidden>Dance na frente da câmera até o medidor de movimento encher, com trilha própria.</span></button></li>
+            <li><button type="button" class="ms-btn" data-anim="idle" data-tier="premium" aria-pressed="false"><span class="ww-icon" aria-hidden="true">wb_twilight</span><span class="ms-n" data-i18n="m_sky">Foto do céu</span><span class="ms-d" data-i18n="m_sky_d" hidden>Vá até a janela e fotografe o céu. Se a foto não passar, você troca de missão: o alarme nunca trava.</span></button></li>
+            <li><button type="button" class="ms-btn" data-anim="walking" data-tier="premium" aria-pressed="false"><span class="ww-icon" aria-hidden="true">qr_code_scanner</span><span class="ms-n" data-i18n="m_qr">QR code</span><span class="ms-d" data-i18n="m_qr_d" hidden>Cole um QR code longe da cama. Para desligar, você precisa ir até ele.</span></button></li>
+            <li><button type="button" class="ms-btn" data-anim="celebrate" data-tier="premium" aria-pressed="false"><span class="ww-icon" aria-hidden="true">stacks</span><span class="ms-n" data-i18n="m_combo">Combos</span><span class="ms-d" data-i18n="m_combo_d" hidden>Junte até três missões em sequência: passos, depois uma conta, depois uma foto.</span></button></li>
+          </ul>
+        </div>
       </div>
-      <div class="step-card reveal">
-        <div class="step-num num">03</div>
-        <div class="step-ic" style="background:var(--ww-success-soft);color:var(--ww-success);"><span class="ww-icon">directions_walk</span></div>
-        <h3 data-i18n="how_3_t">Mexa-se pra desligar</h3>
-        <p data-i18n="how_3_d">Caminhe os passos pedidos ou fotografe o objeto certo. Só aí o alarme silencia — e você já está de pé.</p>
+    </div>
+    <p class="ms-privacy"><span class="ww-icon" aria-hidden="true">shield_lock</span><span data-i18n="ms_privacy">Câmera e voz são analisadas no próprio celular. Nenhuma foto, vídeo ou áudio é enviado.</span></p>
+  </div>
+</section>
+
+<!-- ============================ SOUND + GRADUAL WAKE ============================ -->
+<section class="sec sound" aria-labelledby="sound-title">
+  <div class="wrap sound-grid">
+    <div>
+      <h2 id="sound-title" class="h2" data-i18n="snd_title">Você decide o volume enquanto cumpre a missão</h2>
+      <p class="lead" data-i18n="snd_sub">Tem quem precise do alarme no volume máximo até o fim. Tem quem não queira acordar a casa. Você escolhe em cada alarme.</p>
+      <div class="seg" role="radiogroup" aria-labelledby="sound-title" id="snd-seg">
+        <button type="button" role="radio" aria-checked="true" data-snd="normal"><span class="ww-icon" aria-hidden="true">volume_up</span><span data-i18n="snd_normal">Normal</span></button>
+        <button type="button" role="radio" aria-checked="false" data-snd="low" tabindex="-1"><span class="ww-icon" aria-hidden="true">volume_down</span><span data-i18n="snd_low">Baixo</span></button>
+        <button type="button" role="radio" aria-checked="false" data-snd="mute" tabindex="-1"><span class="ww-icon" aria-hidden="true">volume_off</span><span data-i18n="snd_mute">Silenciar</span></button>
+      </div>
+      <div class="snd-hint" aria-live="polite">
+        <p data-snd-hint="normal" data-i18n="snd_hint_normal">Continua tocando no volume cheio até você terminar.</p>
+        <p data-snd-hint="low" data-i18n="snd_hint_low" hidden>Cai para uns 30% enquanto você faz a missão.</p>
+        <p data-snd-hint="mute" data-i18n="snd_hint_mute" hidden>Fica em silêncio durante a missão e volta a tocar se você parar no meio.</p>
+      </div>
+    </div>
+    <div class="sunrise-card">
+      <div class="sunrise-sky" aria-hidden="true"><span class="sun"></span></div>
+      <div class="sunrise-body">
+        <h3><span class="ww-icon" aria-hidden="true">wb_sunny</span><span data-i18n="sun_title">Despertar gradual</span></h3>
+        <p data-i18n="sun_desc">O som cresce aos poucos enquanto o sol nasce na tela. Menos susto, mesmo resultado: você de pé.</p>
+        <div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================ MOVEMENT MISSIONS ============================ -->
-<section id="features" class="sec">
-  <div class="wrap split">
-    <div class="split-copy reveal">
-      <span class="eyebrow"><span class="ww-icon">directions_walk</span><span data-i18n="move_eyebrow">Missões de movimento</span></span>
-      <h2 style="font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-1.2px;line-height:1.08;margin-top:16px;" data-i18n="move_title">Conte passos de verdade, na dose que você escolher</h2>
-      <p style="margin-top:16px;font-size:17px;line-height:1.55;color:var(--ww-text-secondary);" data-i18n="move_sub">Os sensores do celular contam cada passo. Escolha a dificuldade e o WakeWalk ajusta quantos passos você precisa dar pra silenciar o alarme.</p>
-      <div class="diff-ramp">
-        <div class="diff-row">
-          <div class="diff-ic" style="background:color-mix(in srgb,var(--ww-diff-easy) 16%,transparent);color:var(--ww-diff-easy);"><span class="ww-icon">directions_walk</span></div>
-          <div><div class="dn" data-i18n="diff_easy_n">Fácil</div><div class="dd" data-i18n="diff_easy_d">10 passos · um empurrãozinho</div></div>
-          <div class="diff-bar"><i style="background:var(--ww-diff-easy)"></i><i></i><i></i><i></i></div>
+<!-- ============================ STREAK + LEVANTEI ============================ -->
+<section class="sec streak" aria-labelledby="streak-title">
+  <div class="wrap streak-grid">
+    <div class="receipt-col">
+      <figure class="receipt" data-style="night" id="receipt">
+        <div class="rc-top">
+          <span class="rc-kicker" data-i18n="rc_kicker">Levantei com o WakeWalk</span>
+          <span class="rc-date" data-i18n="rc_date">ter, 21 out</span>
         </div>
-        <div class="diff-row">
-          <div class="diff-ic" style="background:color-mix(in srgb,var(--ww-diff-medium) 16%,transparent);color:var(--ww-diff-medium);"><span class="ww-icon">hiking</span></div>
-          <div><div class="dn" data-i18n="diff_medium_n">Médio</div><div class="dd" data-i18n="diff_medium_d">25 passos · de pé pra valer</div></div>
-          <div class="diff-bar"><i style="background:var(--ww-diff-medium)"></i><i style="background:var(--ww-diff-medium)"></i><i></i><i></i></div>
+        <div class="rc-main">
+          <div>
+            <span class="rc-l" data-i18n="rc_woke">Acordou</span>
+            <span class="rc-time num">06:32</span>
+          </div>
+          <div class="bip bip-rc" data-anim="celebrate" data-glow="0" aria-hidden="true"></div>
         </div>
-        <div class="diff-row">
-          <div class="diff-ic" style="background:color-mix(in srgb,var(--ww-diff-hard) 16%,transparent);color:var(--ww-diff-hard);"><span class="ww-icon">directions_run</span></div>
-          <div><div class="dn" data-i18n="diff_hard_n">Difícil</div><div class="dd" data-i18n="diff_hard_d">50 passos · sono pesado</div></div>
-          <div class="diff-bar"><i style="background:var(--ww-diff-hard)"></i><i style="background:var(--ww-diff-hard)"></i><i style="background:var(--ww-diff-hard)"></i><i></i></div>
-        </div>
-        <div class="diff-row">
-          <div class="diff-ic" style="background:color-mix(in srgb,var(--ww-diff-extreme) 16%,transparent);color:var(--ww-diff-extreme);"><span class="ww-icon">bolt</span></div>
-          <div><div class="dn" data-i18n="diff_extreme_n">Extremo</div><div class="dd" data-i18n="diff_extreme_d">100 passos · sem perdão</div></div>
-          <div class="diff-bar"><i style="background:var(--ww-diff-extreme)"></i><i style="background:var(--ww-diff-extreme)"></i><i style="background:var(--ww-diff-extreme)"></i><i style="background:var(--ww-diff-extreme)"></i></div>
-        </div>
+        <dl class="rc-rows">
+          <div><dt data-i18n="rc_alarm">Alarme</dt><dd class="num">06:30</dd></div>
+          <div><dt data-i18n="rc_mission">Missão</dt><dd data-i18n="rc_mission_v">25 passos</dd></div>
+          <div class="rc-streak"><dt data-i18n="rc_streak">Sequência</dt><dd><span class="ww-icon fill" aria-hidden="true">local_fire_department</span><span data-i18n="rc_streak_v">3 dias</span></dd></div>
+        </dl>
+        <figcaption class="rc-proof" data-i18n="rc_proof">Saí da cama de primeira.</figcaption>
+      </figure>
+      <div class="rc-styles" role="radiogroup" aria-label="Estilo do card" data-i18n-aria="rc_style_label" id="rc-styles">
+        <button type="button" role="radio" aria-checked="true" data-style="night" data-i18n="rc_night">Noturno</button>
+        <button type="button" role="radio" aria-checked="false" data-style="sunrise" data-i18n="rc_sunrise" tabindex="-1">Nascer do sol</button>
+        <button type="button" role="radio" aria-checked="false" data-style="minimal" data-i18n="rc_minimal" tabindex="-1">Minimal</button>
       </div>
     </div>
-    <div class="split-media reveal">
-      <div class="split-glow" style="background:radial-gradient(circle,color-mix(in srgb,var(--ww-sun-b) 30%,transparent),transparent 60%);"></div>
-      <div class="phone">
-        <div class="notch"></div>
-        <div class="phone-screen mission-screen">
-          <div class="mission-wash"></div>
-          <div class="mission-inner">
-            <div class="mission-x"><span class="ww-icon">close</span></div>
-            <div class="mission-label" data-i18n="mission_label">Missão de movimento</div>
-            <div class="ring-wrap">
-              <div class="ring">
-                <svg width="210" height="210" viewBox="0 0 210 210">
-                  <circle cx="105" cy="105" r="95" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="14" />
-                  <circle cx="105" cy="105" r="95" fill="none" stroke="url(#ringGrad)" stroke-width="14" stroke-linecap="round" stroke-dasharray="596.9" stroke-dashoffset="119.4" />
-                </svg>
-                <div class="ring-center">
-                  <span class="ww-icon">directions_walk</span>
-                  <span class="steps">20</span>
-                  <span class="of" data-i18n="mission_of">de 25 passos</span>
-                </div>
-              </div>
-            </div>
-            <div class="feat-list" style="margin-top:0;width:100%;">
-              <li><span class="fi"><span class="ww-icon">sensors</span></span><div><div class="ft" data-i18n="move_f1_t">Contagem por sensor</div></div></li>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div>
+      <h2 id="streak-title" class="h2" data-i18n="st_title">Levantou? Isso merece um card</h2>
+      <p class="lead" data-i18n="st_sub">Cada missão cumprida gera o card “Levantei”, com a hora em que você saiu da cama. São três estilos, prontos para o story ou para o grupo da família.</p>
+      <ul class="facts">
+        <li>
+          <span class="fact-ic streak-ic" aria-hidden="true"><span class="ww-icon fill">local_fire_department</span></span>
+          <div><h3 data-i18n="st_1_t">Sequência de manhãs</h3><p data-i18n="st_1_d">Cada manhã cumprida soma na sua sequência. Ela aparece no app, no card e no widget.</p></div>
+        </li>
+        <li>
+          <span class="fact-ic" aria-hidden="true"><span class="ww-icon">ac_unit</span></span>
+          <div><h3 data-i18n="st_2_t">Congelamentos para o dia ruim</h3><p data-i18n="st_2_d">Perdeu uma manhã? Um congelamento guardado protege a sequência. Você ganha mais conforme mantém o hábito.</p></div>
+        </li>
+      </ul>
     </div>
   </div>
+</section>
 
-  <!-- movement feature bullets under -->
-  <div class="wrap" style="margin-top:8px;">
-    <ul class="feat-list reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:none;">
-      <li><span class="fi"><span class="ww-icon">sensors</span></span><div><div class="ft" data-i18n="move_f1_t">Contagem por sensor</div><div class="fd" data-i18n="move_f1_d">Acelerômetro e podômetro detectam movimento real — não adianta chacoalhar o celular.</div></div></li>
-      <li><span class="fi"><span class="ww-icon">tune</span></span><div><div class="ft" data-i18n="move_f2_t">Meta adaptável</div><div class="fd" data-i18n="move_f2_d">De um passeio curto a uma caminhada que te acorda de vez.</div></div></li>
-      <li><span class="fi"><span class="ww-icon">data_usage</span></span><div><div class="ft" data-i18n="move_f3_t">Anel de progresso ao vivo</div><div class="fd" data-i18n="move_f3_d">Veja os passos subirem em tempo real até o amanhecer da tela.</div></div></li>
+<!-- ============================ NIGHT ============================ -->
+<section id="night" class="sec night" aria-labelledby="night-title">
+  <div class="wrap">
+    <div class="night-head">
+      <div class="bip bip-night" data-anim="sleeping" role="img" aria-label="Bip dormindo" data-i18n-aria="bip_sleeping"></div>
+      <div>
+        <h2 id="night-title" class="h2" data-i18n="ng_title">Uma boa manhã começa na noite anterior</h2>
+        <p class="lead" data-i18n="ng_sub">O WakeWalk também cuida da hora de deitar e do que você vê quando levanta.</p>
+      </div>
+    </div>
+    <ul class="night-list">
+      <li><span class="ww-icon" aria-hidden="true">nightlight</span><h3 data-i18n="ng_1_t">Sons para dormir</h3><p data-i18n="ng_1_d">Sons em loop com timer de sono. No fim, o volume diminui aos poucos.</p></li>
+      <li><span class="ww-icon" aria-hidden="true">bedtime</span><h3 data-i18n="ng_2_t">Hora de dormir</h3><p data-i18n="ng_2_d">Sugestões de horário por ciclos de sono e um lembrete antes de deitar.</p></li>
+      <li><span class="ww-icon" aria-hidden="true">wb_sunny</span><h3 data-i18n="ng_3_t">Briefing matinal</h3><p data-i18n="ng_3_d">Assim que você levanta: o clima do dia, sua sequência e o próximo alarme.</p></li>
+      <li><span class="ww-icon" aria-hidden="true">widgets</span><h3 data-i18n="ng_4_t">Widget na tela inicial</h3><p data-i18n="ng_4_d">Próximo alarme e sequência sem abrir o app. Disponível no Android.</p></li>
     </ul>
   </div>
 </section>
 
-<!-- ============================ PHOTO MISSION ============================ -->
-<section class="sec">
-  <div class="wrap split flip">
-    <div class="split-media reveal">
-      <div class="split-glow" style="background:radial-gradient(circle,color-mix(in srgb,var(--ww-sun-c) 26%,transparent),transparent 60%);"></div>
-      <div class="phone">
-        <div class="notch"></div>
-        <div class="phone-screen">
-          <div class="cam-screen">
-            <img class="cam-img" src="assets/photo-scene.jpg" alt="" />
-            <div class="cam-scrim"></div>
-            <div class="cam-top">
-              <span class="ww-icon">local_cafe</span>
-              <div class="ct" data-i18n="photo_cam_t">Fotografe uma xícara</div>
-              <div class="ch" data-i18n="photo_cam_h">Aponte a câmera para o objeto</div>
-            </div>
-            <div class="cam-bot">
-              <div class="cam-shutter"><i></i></div>
-              <div class="cam-cap" data-i18n="photo_cam_cap">Toque para capturar</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="split-copy reveal">
-      <span class="eyebrow"><span class="ww-icon">photo_camera</span><span data-i18n="photo_eyebrow">Missão de foto · Premium</span></span>
-      <h2 style="font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-1.2px;line-height:1.08;margin-top:16px;" data-i18n="photo_title">Sem a foto certa, o alarme não para</h2>
-      <p style="margin-top:16px;font-size:17px;line-height:1.55;color:var(--ww-text-secondary);" data-i18n="photo_sub">Para alarmes ainda mais à prova de preguiça, o WakeWalk pede uma foto de um objeto do dia a dia. Você precisa levantar, ir até ele e fotografar — reconhecimento na hora.</p>
-      <ul class="feat-list">
-        <li><span class="fi" style="background:color-mix(in srgb,var(--ww-sun-c) 16%,transparent);color:var(--ww-sun-c);"><span class="ww-icon">casino</span></span><div><div class="ft" data-i18n="photo_f1_t">Objeto aleatório</div><div class="fd" data-i18n="photo_f1_d">Pia, escova de dentes, cafeteira… ele sorteia algo que te tira do quarto.</div></div></li>
-        <li><span class="fi" style="background:color-mix(in srgb,var(--ww-sun-c) 16%,transparent);color:var(--ww-sun-c);"><span class="ww-icon">center_focus_strong</span></span><div><div class="ft" data-i18n="photo_f2_t">Reconhecimento na câmera</div><div class="fd" data-i18n="photo_f2_d">A IA confirma o objeto antes de liberar — nada de foto da parede.</div></div></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ STREAK ============================ -->
-<section class="sec">
+<!-- ============================ PRICING + TRIAL ============================ -->
+<section id="pricing" class="sec pricing" aria-labelledby="pricing-title">
   <div class="wrap">
-    <div class="streak-band reveal">
-      <div class="streak-grid">
-        <div>
-          <span class="eyebrow streak"><span class="ww-icon fill">local_fire_department</span><span data-i18n="streak_eyebrow">Sequência</span></span>
-          <h2 style="font-size:clamp(26px,3.6vw,38px);font-weight:800;letter-spacing:-1.2px;line-height:1.08;margin-top:14px;" data-i18n="streak_title">Construa uma sequência que você não quer quebrar</h2>
-          <p style="margin-top:16px;font-size:16.5px;line-height:1.55;color:var(--ww-text-secondary);" data-i18n="streak_sub">Cada manhã vencida acende o fogo. Veja sua sequência crescer dia após dia e supere o seu recorde — a motivação que faz o hábito grudar.</p>
-        </div>
-        <div style="display:flex;align-items:center;gap:24px;">
-          <div class="flame-big flick"><span class="ww-icon fill">local_fire_department</span></div>
-          <div>
-            <div class="streak-num"><span class="n">14</span><span class="u" data-i18n="streak_unit">dias de sequência</span></div>
-            <div class="streak-chips">
-              <span class="schip"><span class="ww-icon fill" style="color:var(--ww-warning)">emoji_events</span><span data-i18n="streak_best">Melhor sequência</span> · <span class="num">28</span></span>
-              <span class="schip"><span class="ww-icon" style="color:var(--ww-success)">check_circle</span><span data-i18n="streak_week">Esta semana</span> · <span class="num" data-i18n="streak_week_v">7/7 missões</span></span>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="sec-intro">
+      <h2 id="pricing-title" class="h2" data-i18n="pr_title">Grátis para sempre. Premium se quiser mais.</h2>
+      <p data-i18n="pr_sub">O plano grátis não expira e não tem anúncios. O Premium traz flexões, dança e combos de 3 missões, além de alarmes ilimitados.</p>
     </div>
-  </div>
-</section>
-
-<!-- ============================ STATISTICS ============================ -->
-<section class="sec" style="padding-top:24px;">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><span class="ww-icon">insights</span><span data-i18n="stats_eyebrow">Estatísticas e tendências</span></span>
-      <h2 data-i18n="stats_title">Seu progresso, em números que motivam</h2>
-      <p data-i18n="stats_sub">O WakeWalk acompanha cada despertar e transforma em tendências claras: horário médio, passos, consistência e a evolução semana a semana.</p>
-    </div>
-    <div class="stats-grid reveal">
-      <div class="stat-tile">
-        <div class="si" style="background:var(--ww-primary-soft);color:var(--ww-primary);"><span class="ww-icon">schedule</span></div>
-        <div class="sv" data-i18n="stat_1_v">06:42</div><div class="sl" data-i18n="stat_1_l">Horário médio</div>
-      </div>
-      <div class="stat-tile">
-        <div class="si" style="background:var(--ww-success-soft);color:var(--ww-success);"><span class="ww-icon">directions_walk</span></div>
-        <div class="sv" data-i18n="stat_2_v">1.480</div><div class="sl" data-i18n="stat_2_l">Passos / manhã</div>
-      </div>
-      <div class="stat-tile">
-        <div class="si" style="background:color-mix(in srgb,var(--ww-info) 16%,transparent);color:var(--ww-info);"><span class="ww-icon">calendar_month</span></div>
-        <div class="sv" data-i18n="stat_3_v">23</div><div class="sl" data-i18n="stat_3_l">Manhãs no mês</div>
-      </div>
-      <div class="stat-tile">
-        <div class="si" style="background:color-mix(in srgb,var(--ww-warning) 16%,transparent);color:var(--ww-warning);"><span class="ww-icon">target</span></div>
-        <div class="sv" data-i18n="stat_4_v">94%</div><div class="sl" data-i18n="stat_4_l">Taxa de acerto</div>
-      </div>
-    </div>
-    <div class="charts reveal">
-      <div class="chart-card">
-        <div class="ch-h"><span class="t" data-i18n="chart_trend_t">Tendência de despertar</span><span class="m" data-i18n="chart_trend_m">últimos 7 dias</span></div>
-        <svg viewBox="0 0 320 120" width="100%" style="display:block;">
-          <defs>
-            <linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#7C8CFF" stop-opacity="0.24" />
-              <stop offset="100%" stop-color="#7C8CFF" stop-opacity="0" />
-            </linearGradient>
-          </defs>
-          <line x1="8" y1="60" x2="312" y2="60" stroke="#626A7B" stroke-width="1" stroke-dasharray="3 4" opacity="0.5" />
-          <path d="M8 78 L58 64 L108 70 L158 48 L208 54 L258 36 L312 42 L312 112 L8 112 Z" fill="url(#trendFill)" />
-          <path d="M8 78 L58 64 L108 70 L158 48 L208 54 L258 36 L312 42" fill="none" stroke="#7C8CFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-          <circle cx="8" cy="78" r="3.4" fill="#0B0D12" stroke="#7C8CFF" stroke-width="2" />
-          <circle cx="58" cy="64" r="3.4" fill="#0B0D12" stroke="#7C8CFF" stroke-width="2" />
-          <circle cx="108" cy="70" r="3.4" fill="#0B0D12" stroke="#7C8CFF" stroke-width="2" />
-          <circle cx="158" cy="48" r="3.4" fill="#0B0D12" stroke="#7C8CFF" stroke-width="2" />
-          <circle cx="208" cy="54" r="3.4" fill="#0B0D12" stroke="#7C8CFF" stroke-width="2" />
-          <circle cx="258" cy="36" r="3.4" fill="#0B0D12" stroke="#7C8CFF" stroke-width="2" />
-          <circle cx="312" cy="42" r="3.4" fill="#0B0D12" stroke="#7C8CFF" stroke-width="2" />
-        </svg>
-      </div>
-      <div class="chart-card">
-        <div class="ch-h"><span class="t" data-i18n="chart_heat_t">Consistência</span><span class="m" data-i18n="chart_heat_m">12 semanas</span></div>
-        <div class="heat" id="heatmap"></div>
-        <div class="heat-legend">
-          <span data-i18n="heat_less">menos</span>
-          <i style="background:var(--ww-heat-0)"></i><i style="background:var(--ww-heat-1)"></i><i style="background:var(--ww-heat-2)"></i><i style="background:var(--ww-heat-3)"></i><i style="background:var(--ww-heat-4)"></i>
-          <span data-i18n="heat_more">mais</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ ACHIEVEMENTS ============================ -->
-<section class="sec" style="padding-top:24px;">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow"><span class="ww-icon fill">military_tech</span><span data-i18n="ach_eyebrow">Conquistas</span></span>
-      <h2 data-i18n="ach_title">Cada marco vira uma medalha</h2>
-      <p data-i18n="ach_sub">Desbloqueie conquistas conforme avança — pequenas recompensas que celebram cada hábito construído.</p>
-    </div>
-    <div class="ach-grid reveal">
-      <div class="ach-card">
-        <span class="ach-badge" style="background:var(--ww-success-soft);color:var(--ww-success);" data-i18n="ach_unlocked">Desbloqueada</span>
-        <div class="ach-medal" style="background:color-mix(in srgb,var(--ww-warning) 16%,transparent);color:var(--ww-warning);"><span class="ww-icon fill">wb_twilight</span></div>
-        <h4 data-i18n="ach_1_t">Madrugador</h4><p data-i18n="ach_1_d">7 dias seguidos antes das 7h</p>
-      </div>
-      <div class="ach-card">
-        <span class="ach-badge" style="background:var(--ww-success-soft);color:var(--ww-success);" data-i18n="ach_unlocked">Desbloqueada</span>
-        <div class="ach-medal" style="background:var(--ww-success-soft);color:var(--ww-success);"><span class="ww-icon fill">sprint</span></div>
-        <h4 data-i18n="ach_2_t">Maratonista</h4><p data-i18n="ach_2_d">10.000 passos em missões</p>
-      </div>
-      <div class="ach-card locked">
-        <span class="ach-badge" style="background:var(--ww-chip);color:var(--ww-text-tertiary);" data-i18n="ach_locked">Bloqueada</span>
-        <div class="ach-medal" style="background:var(--ww-streak-soft);color:var(--ww-streak);"><span class="ww-icon fill">local_fire_department</span></div>
-        <h4 data-i18n="ach_3_t">Inquebrável</h4><p data-i18n="ach_3_d">30 dias de sequência</p>
-      </div>
-      <div class="ach-card locked">
-        <span class="ach-badge" style="background:var(--ww-chip);color:var(--ww-text-tertiary);" data-i18n="ach_locked">Bloqueada</span>
-        <div class="ach-medal" style="background:var(--ww-primary-soft);color:var(--ww-primary);"><span class="ww-icon fill">emoji_events</span></div>
-        <h4 data-i18n="ach_4_t">Lenda do amanhecer</h4><p data-i18n="ach_4_d">100 manhãs vencidas</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ SLEEP MODE ============================ -->
-<section id="sleep" class="sec sleep-sec">
-  <div class="wrap sleep-grid">
-    <div class="split-copy reveal">
-      <span class="eyebrow sleep"><span class="ww-icon fill">bedtime</span><span data-i18n="sleep_eyebrow">Modo Sono</span></span>
-      <h2 style="font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-1.2px;line-height:1.08;margin-top:16px;" data-i18n="sleep_title">Durma melhor pra acordar melhor</h2>
-      <p style="margin-top:16px;font-size:17px;line-height:1.55;color:var(--ww-text-secondary);" data-i18n="sleep_sub">O ciclo do bom despertar começa à noite. Defina sua hora de dormir, siga ciclos de sono de 90 minutos e adormeça com uma biblioteca de sons relaxantes.</p>
-      <ul class="feat-list">
-        <li><span class="fi" style="background:var(--ww-secondary-soft);color:var(--ww-secondary);"><span class="ww-icon">notifications</span></span><div><div class="ft" data-i18n="sleep_f1_t">Lembrete de dormir</div><div class="fd" data-i18n="sleep_f1_d">Um empurrãozinho na hora certa para você descansar o suficiente.</div></div></li>
-        <li><span class="fi" style="background:var(--ww-secondary-soft);color:var(--ww-secondary);"><span class="ww-icon">bedtime</span></span><div><div class="ft" data-i18n="sleep_f2_t">Ciclos de 90 minutos</div><div class="fd" data-i18n="sleep_f2_d">Sugestões de horário alinhadas aos seus ciclos de sono.</div></div></li>
-        <li><span class="fi" style="background:var(--ww-secondary-soft);color:var(--ww-secondary);"><span class="ww-icon">graphic_eq</span></span><div><div class="ft" data-i18n="sleep_f3_t">Sons relaxantes</div><div class="fd" data-i18n="sleep_f3_d">Chuva, floresta, ondas e mais — com timer pra desligar sozinho.</div></div></li>
-      </ul>
-    </div>
-    <div class="split-copy reveal">
-      <div class="sleep-hero">
-        <div class="lbl" data-i18n="sleep_hero_lbl">Hora de dormir</div>
-        <div class="big">22:30</div>
-        <div class="meta" data-i18n="sleep_hero_meta">8h 0min até o alarme · 5 ciclos</div>
-      </div>
-      <div class="sound-grid">
-        <div class="sound-card on">
-          <div class="sc-top">
-            <div class="sc-ic" style="background:color-mix(in srgb,#34D399 16%,transparent);color:#34D399;"><span class="ww-icon">forest</span></div>
-            <div class="sc-play"><span class="bars"><span></span><span></span><span></span><span></span></span></div>
-          </div>
-          <div class="sc-name" data-i18n="sound_forest">Floresta</div>
-        </div>
-        <div class="sound-card">
-          <div class="sc-top">
-            <div class="sc-ic" style="background:color-mix(in srgb,#5EA8FF 16%,transparent);color:#5EA8FF;"><span class="ww-icon">rainy</span></div>
-            <div class="sc-play"><span class="ww-icon fill">play_arrow</span></div>
-          </div>
-          <div class="sc-name" data-i18n="sound_rain">Chuva</div>
-        </div>
-        <div class="sound-card">
-          <div class="sc-top">
-            <div class="sc-ic" style="background:color-mix(in srgb,#5EA8FF 16%,transparent);color:#5EA8FF;"><span class="ww-icon">waves</span></div>
-            <div class="sc-play"><span class="ww-icon fill">play_arrow</span></div>
-          </div>
-          <div class="sc-name" data-i18n="sound_waves">Ondas</div>
-        </div>
-        <div class="sound-card">
-          <div class="sc-top">
-            <div class="sc-ic" style="background:var(--ww-secondary-soft);color:var(--ww-secondary);"><span class="ww-icon">nights_stay</span></div>
-            <div class="sc-play"><span class="ww-icon fill">play_arrow</span></div>
-          </div>
-          <div class="sc-name" data-i18n="sound_night">Noite</div>
-        </div>
-      </div>
-      <div class="nowbar">
-        <div class="np-ic"><span class="ww-icon">forest</span></div>
-        <div><div class="np-t" data-i18n="now_playing">Tocando agora</div><div class="np-s" data-i18n="now_sound">Floresta · sons da natureza</div></div>
-        <div class="np-timer"><span class="ww-icon">timer</span>30:00</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ RECURRING ALARMS ============================ -->
-<section class="sec">
-  <div class="wrap split">
-    <div class="split-copy reveal">
-      <span class="eyebrow"><span class="ww-icon">event_repeat</span><span data-i18n="recur_eyebrow">Alarmes recorrentes</span></span>
-      <h2 style="font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-1.2px;line-height:1.08;margin-top:16px;" data-i18n="recur_title">Uma rotina pra cada dia da semana</h2>
-      <p style="margin-top:16px;font-size:17px;line-height:1.55;color:var(--ww-text-secondary);" data-i18n="recur_sub">Defina horários diferentes para dias úteis e fins de semana, ative só os dias que importam e deixe o WakeWalk cuidar da consistência por você.</p>
-      <ul class="feat-list">
-        <li><span class="fi"><span class="ww-icon">date_range</span></span><div><div class="ft" data-i18n="recur_f1_t">Por dia da semana</div><div class="fd" data-i18n="recur_f1_d">Selecione exatamente em quais dias cada alarme toca.</div></div></li>
-        <li><span class="fi"><span class="ww-icon">alarm</span></span><div><div class="ft" data-i18n="recur_f2_t">Vários alarmes</div><div class="fd" data-i18n="recur_f2_d">Até 2 no plano grátis e ilimitados no Premium, cada um com sua própria missão.</div></div></li>
-        <li><span class="fi"><span class="ww-icon">schedule</span></span><div><div class="ft" data-i18n="recur_f3_t">Próximo alarme em destaque</div><div class="fd" data-i18n="recur_f3_d">A tela inicial sempre mostra quanto falta pro próximo toque.</div></div></li>
-      </ul>
-    </div>
-    <div class="split-media reveal">
-      <div class="split-glow" style="background:radial-gradient(circle,color-mix(in srgb,var(--ww-primary) 24%,transparent),transparent 60%);"></div>
-      <div class="recur-card" style="width:100%;max-width:380px;">
-        <div class="recur-top">
-          <div class="recur-time">06:00<small data-i18n="recur_days">Seg a Sex</small></div>
-          <div class="switch"><i></i></div>
-        </div>
-        <div class="days">
-          <b class="on" data-i18n="day_mon">S</b>
-          <b class="on" data-i18n="day_tue">T</b>
-          <b class="on" data-i18n="day_wed">Q</b>
-          <b class="on" data-i18n="day_thu">Q</b>
-          <b class="on" data-i18n="day_fri">S</b>
-          <b data-i18n="day_sat">S</b>
-          <b data-i18n="day_sun">D</b>
-        </div>
-        <div class="recur-meta"><span class="ww-icon">directions_walk</span>Missão de movimento · Médio</div>
-        <div class="recur-meta"><span class="ww-icon">schedule</span><span data-i18n="recur_meta">Toca em 8h 12min</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ PRICING ============================ -->
-<section id="pricing" class="sec">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow"><span class="ww-icon fill">workspace_premium</span><span data-i18n="price_eyebrow">Planos</span></span>
-      <h2 data-i18n="price_title">Comece grátis. Vá de Premium quando quiser.</h2>
-      <p data-i18n="price_sub">O plano grátis não expira e não tem anúncios. O Premium libera as missões com câmera, alarmes ilimitados e missões em sequência.</p>
-    </div>
-    <div class="price-wrap reveal">
+    <div class="plans">
       <div class="plan">
-        <div class="pn" data-i18n="plan_free_n">Grátis</div>
-        <div class="pregion"><span class="ww-icon">all_inclusive</span><span><b data-i18n="plan_free_per">Para sempre</b><em data-i18n="plan_free_sub">Sem prazo e sem anúncios</em></span></div>
-        <ul class="pfeat">
-          <li><span class="ww-icon">check</span><span data-i18n="plan_free_feat_1">Até 2 alarmes</span></li>
-          <li><span class="ww-icon">check</span><span data-i18n="plan_free_feat_2">Missões de passos, matemática, digitação e chacoalhar</span></li>
-          <li><span class="ww-icon">check</span><span data-i18n="plan_free_feat_3">Estatísticas, sequência e conquistas</span></li>
-          <li><span class="ww-icon">check</span><span data-i18n="plan_free_feat_4">Modo Sono e briefing matinal</span></li>
+        <h3 class="plan-n" data-i18n="pl_free">Grátis</h3>
+        <p class="plan-per" data-i18n="pl_free_per">Para sempre, sem cartão</p>
+        <ul class="plan-feat">
+          <li><span class="ww-icon" aria-hidden="true">check</span><span data-i18n="pl_free_1">Até 2 alarmes</span></li>
+          <li><span class="ww-icon" aria-hidden="true">check</span><span data-i18n="pl_free_2">Caminhar, chacoalhar, matemática, digitação, “Diga a frase” e foto de um objeto</span></li>
+          <li><span class="ww-icon" aria-hidden="true">check</span><span data-i18n="pl_free_3">Sequência, congelamentos e card “Levantei”</span></li>
+          <li><span class="ww-icon" aria-hidden="true">check</span><span data-i18n="pl_free_4">Sons para dormir e briefing matinal</span></li>
         </ul>
-        <a href="#download" class="btn btn-soft" data-i18n="plan_cta_free">Baixar grátis</a>
+        <a href="#download" class="btn btn-soft" data-i18n="pl_free_cta">Baixar grátis</a>
       </div>
-      <div class="plan best">
-        <span class="plan-tag" data-i18n="plan_best">Mais completo</span>
-        <div class="pn" data-i18n="plan_prem_n">Premium</div>
-        <div class="pregion"><span class="ww-icon">storefront</span><span><b data-i18n="plan_prem_per">Mensal, anual ou vitalício</b><em data-i18n="plan_price_region">Preço exibido na loja, conforme a sua região</em></span></div>
-        <span class="save" data-i18n="plan_prem_trial">Teste grátis de 7 dias no plano anual</span>
-        <ul class="pfeat">
-          <li><span class="ww-icon">check</span><span data-i18n="plan_prem_feat_1">Tudo do plano grátis</span></li>
-          <li><span class="ww-icon">check</span><span data-i18n="plan_prem_feat_2">Flexão, agachamento, foto e QR code pela câmera</span></li>
-          <li><span class="ww-icon">check</span><span data-i18n="plan_prem_feat_3">Alarmes ilimitados</span></li>
-          <li><span class="ww-icon">check</span><span data-i18n="plan_prem_feat_4">Até 3 missões em sequência</span></li>
+      <div class="plan plan-prem">
+        <h3 class="plan-n" data-i18n="pl_prem">Premium</h3>
+        <p class="plan-per" data-i18n="pl_prem_per">Mensal, anual ou vitalício. O preço aparece na loja, conforme a sua região.</p>
+        <ul class="plan-feat">
+          <li><span class="ww-icon" aria-hidden="true">check</span><span data-i18n="pl_prem_1">Tudo do plano grátis</span></li>
+          <li><span class="ww-icon" aria-hidden="true">check</span><span data-i18n="pl_prem_2">Flexões, agachamentos, dança, foto do céu e QR code</span></li>
+          <li><span class="ww-icon" aria-hidden="true">check</span><span data-i18n="pl_prem_3">Alarmes ilimitados</span></li>
+          <li><span class="ww-icon" aria-hidden="true">check</span><span data-i18n="pl_prem_4">Combos de até 3 missões</span></li>
         </ul>
-        <a href="#download" class="btn btn-primary" data-i18n="plan_cta_prem">Experimentar o Premium</a>
+        <div class="trial">
+          <h4 data-i18n="tr_title">Teste de 7 dias no plano anual, sem surpresa</h4>
+          <ol class="tl">
+            <li><span class="tl-dot" aria-hidden="true"></span><b data-i18n="tr_1">Hoje</b><span data-i18n="tr_1_d">Acesso total</span></li>
+            <li><span class="tl-dot" aria-hidden="true"></span><b data-i18n="tr_2">Dia 5</b><span data-i18n="tr_2_d">Avisamos você</span></li>
+            <li><span class="tl-dot" aria-hidden="true"></span><b data-i18n="tr_3">Dia 7</b><span data-i18n="tr_3_d">1ª cobrança</span></li>
+          </ol>
+          <p class="tr-cancel"><span class="ww-icon" aria-hidden="true">notifications</span><span data-i18n="tr_cancel">Lembrete 2 dias antes da cobrança. Cancele em 2 toques na loja.</span></p>
+        </div>
+        <a href="#download" class="btn btn-primary" data-i18n="pl_prem_cta">Testar o Premium</a>
       </div>
     </div>
-    <p class="price-note" data-i18n="price_note">O teste grátis de 7 dias vale para novos assinantes do plano anual: a loja pede uma forma de pagamento para iniciar e, se você cancelar antes do fim, não há cobrança. A assinatura é cobrada pela Google Play ou App Store e renova automaticamente — cancele quando quiser nas configurações da loja. O vitalício é uma compra única, sem renovação.</p>
+    <p class="price-note" data-i18n="price_note">O teste grátis de 7 dias vale para novos assinantes do plano anual. A loja pede uma forma de pagamento para iniciar e, se você cancelar antes do fim, não há cobrança. A assinatura é cobrada pela Google Play ou App Store e renova automaticamente; cancele quando quiser nas configurações da loja. O vitalício é uma compra única, sem renovação.</p>
   </div>
 </section>
 
-<!-- ============================ DOWNLOAD CTA ============================ -->
-<section id="download" class="sec" style="padding-top:24px;">
-  <div class="wrap">
-    <div class="cta-band reveal">
-      <h2 data-i18n="cta_title">Sua próxima manhã começa de pé.</h2>
-      <p data-i18n="cta_sub">Baixe o WakeWalk e transforme o acordar num hábito que gruda.</p>
-      <div class="store-row">
-        <a class="store-badge" href="https://apps.apple.com/" target="_blank" rel="noopener">
-          <span class="sb-logo"><img src="assets/apple_logo.svg" alt="" /></span>
-          <span class="sb-txt"><span class="s1" data-i18n="store_get_ios_1">Baixar na</span><span class="s2" data-i18n="store_get_ios_2">App Store</span></span>
-        </a>
-        <a class="store-badge" href="https://play.google.com/store/apps/" target="_blank" rel="noopener">
-          <span class="sb-logo">
-            <svg class="play-tri" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-              <path d="M48 32 L296 256 L48 480 C40 484 32 480 32 470 L32 42 C32 32 40 28 48 32 Z" fill="#34A853"/>
-              <path d="M48 32 L296 256 L370 182 L80 18 C68 12 56 18 48 32 Z" fill="#EA4335"/>
-              <path d="M48 480 L296 256 L370 330 L80 494 C68 500 56 494 48 480 Z" fill="#FBBC05"/>
-              <path d="M296 256 L370 182 L470 240 C484 248 484 264 470 272 L370 330 Z" fill="#4285F4"/>
-            </svg>
-          </span>
-          <span class="sb-txt"><span class="s1" data-i18n="store_get_and_1">Disponível no</span><span class="s2" data-i18n="store_get_and_2">Google Play</span></span>
-        </a>
-      </div>
+<!-- ============================ FAQ ============================ -->
+<section class="sec faq" aria-labelledby="faq-title">
+  <div class="wrap faq-wrap">
+    <h2 id="faq-title" class="h2" data-i18n="fq_title">Perguntas que a gente ouve</h2>
+    <div class="faq-list">
+      <details><summary><span data-i18n="fq_1_q">Preciso pagar para usar?</span><span class="ww-icon" aria-hidden="true">expand_more</span></summary><p data-i18n="fq_1_a">Não. O plano grátis não expira, não tem anúncios e inclui seis missões, até 2 alarmes, sequência e sons para dormir.</p></details>
+      <details><summary><span data-i18n="fq_2_q">A câmera ou o microfone enviam alguma coisa?</span><span class="ww-icon" aria-hidden="true">expand_more</span></summary><p data-i18n="fq_2_a">Não. Flexões, agachamentos, dança, fotos e a frase falada são analisados no próprio celular. Nada é enviado para servidores.</p></details>
+      <details><summary><span data-i18n="fq_3_q">E se a missão não funcionar na hora?</span><span class="ww-icon" aria-hidden="true">expand_more</span></summary><p data-i18n="fq_3_a">O alarme nunca fica travado. Se a foto do céu não passar, por exemplo, você escolhe outra missão para desligar.</p></details>
+      <details><summary><span data-i18n="fq_4_q">Como cancelo o teste do Premium?</span><span class="ww-icon" aria-hidden="true">expand_more</span></summary><p data-i18n="fq_4_a">Na App Store ou no Google Play: Gerenciar, depois Cancelar assinatura. O app avisa 2 dias antes da primeira cobrança.</p></details>
+      <details><summary><span data-i18n="fq_5_q">O som continua tocando durante a missão?</span><span class="ww-icon" aria-hidden="true">expand_more</span></summary><p data-i18n="fq_5_a">Você escolhe em cada alarme: volume normal, baixo ou silêncio. No silêncio, o alarme volta a tocar se você parar no meio da missão.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ DOWNLOAD (amanhecer) ============================ -->
+<section id="download" class="dawn" aria-labelledby="dl-title">
+  <div class="wrap dawn-inner">
+    <div class="bip bip-dawn" data-anim="celebrate" role="img" aria-label="Bip comemorando" data-i18n-aria="bip_celebrate"></div>
+    <h2 id="dl-title" data-i18n="dl_title">Amanhã, levante de primeira.</h2>
+    <p data-i18n="dl_sub">Baixe o WakeWalk e deixe o Bip cuidar do resto.</p>
+    <div class="store-row">
+      <a class="store-badge" href="https://apps.apple.com/" target="_blank" rel="noopener">
+        <span class="sb-logo"><img src="assets/apple_logo.svg" alt="" width="24" height="24" /></span>
+        <span class="sb-txt"><span class="s1" data-i18n="store_ios_1">Baixar na</span><span class="s2">App Store</span></span>
+      </a>
+      <a class="store-badge" href="https://play.google.com/store/apps/" target="_blank" rel="noopener">
+        <span class="sb-logo">
+          <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+            <path d="M48 32 L296 256 L48 480 C40 484 32 480 32 470 L32 42 C32 32 40 28 48 32 Z" fill="#34A853"/>
+            <path d="M48 32 L296 256 L370 182 L80 18 C68 12 56 18 48 32 Z" fill="#EA4335"/>
+            <path d="M48 480 L296 256 L370 330 L80 494 C68 500 56 494 48 480 Z" fill="#FBBC05"/>
+            <path d="M296 256 L370 182 L470 240 C484 248 484 264 470 272 L370 330 Z" fill="#4285F4"/>
+          </svg>
+        </span>
+        <span class="sb-txt"><span class="s1" data-i18n="store_and_1">Disponível no</span><span class="s2">Google Play</span></span>
+      </a>
     </div>
   </div>
 </section>
@@ -555,16 +367,16 @@
     <div class="footer-grid">
       <div>
         <a class="brand" href="#top">
-          <span class="brand-mark"><img src="assets/wakewalk-mark.svg" alt="" /></span>
+          <span class="brand-mark"><img src="assets/wakewalk-mark.svg" alt="" width="32" height="32" /></span>
           <span>WakeWalk</span>
         </a>
-        <p class="footer-tag" data-i18n="footer_tag">O único despertador que garante que você levanta — acorde com movimento, comece o dia melhor.</p>
+        <p class="footer-tag" data-i18n="footer_tag">O despertador que só desliga quando você levanta da cama.</p>
       </div>
       <div>
         <h4 data-i18n="footer_product">Produto</h4>
         <ul class="footer-links">
-          <li><a href="#features" data-i18n="footer_features">Recursos</a></li>
-          <li><a href="#pricing" data-i18n="footer_pricing">Assinatura</a></li>
+          <li><a href="#missions" data-i18n="nav_missions">Missões</a></li>
+          <li><a href="#pricing" data-i18n="nav_pricing">Premium</a></li>
           <li><a href="#download" data-i18n="footer_download">Baixar</a></li>
         </ul>
       </div>
@@ -580,32 +392,12 @@
     </div>
     <div class="footer-bottom">
       <p data-i18n="footer_rights">© 2026 WakeWalk. Todos os direitos reservados.</p>
-      <p>givoxmobile@gmail.com</p>
+      <p class="legal-lang" data-i18n="footer_legal_lang"></p>
     </div>
   </div>
 </footer>
 
-<script>
-  // Build the consistency heatmap (12 weeks × 7 days) with a believable pattern.
-  (function () {
-    const el = document.getElementById("heatmap");
-    if (!el) return;
-    const lvls = [0,1,2,3,4];
-    const weeks = 12, days = 7;
-    // weighted toward higher levels for a "consistent" look
-    const pick = () => { const r = Math.random(); return r < .08 ? 0 : r < .22 ? 1 : r < .45 ? 2 : r < .72 ? 3 : 4; };
-    let html = "";
-    for (let w = 0; w < weeks; w++) {
-      html += '<div class="col">';
-      for (let d = 0; d < days; d++) {
-        const lvl = (w === weeks - 1 && d > 3) ? 0 : pick();
-        html += '<div class="cell" style="background:var(--ww-heat-' + lvl + ')"></div>';
-      }
-      html += "</div>";
-    }
-    el.innerHTML = html;
-  })();
-</script>
-<script src="i18n.js"></script>
+<script src="bip.js" defer></script>
+<script src="i18n.js" defer></script>
 </body>
 </html>
